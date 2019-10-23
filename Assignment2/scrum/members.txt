@@ -1,4 +1,4 @@
-Member1 name:        email:        utorid:
+Member1 name:   jason xu     email:    wencai.xu@mail.utoronto.ca    utorid: xuwencai
 Member2 name:        email:        utorid:
 Member3 name:        email:        utorid:
 Member4 name:        email:        utorid:
