@@ -1,6 +1,7 @@
 package ca.utoronto.utm.util;
 
 import java.util.ArrayList;
+
 /**
  * Implement a modification of the Observer/Observable 
  * Design Pattern. See https://www.oodesign.com/observer-pattern.html 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * @author arnold
  *
  */
-public class Observable {
+public class Observable{
 	private ArrayList<Observer> observers = new ArrayList<Observer>();
 	public void attach(Observer o) {
 		observers.add(o);
