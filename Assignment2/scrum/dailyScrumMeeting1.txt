@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: XuWencai     email:   wencai.xu@mail.utoronto.ca  utorid:   xuwencai
 
 Oct 17,2019
 	What I did yesterday:
@@ -27,29 +27,29 @@ Oct 21,2019
 	Obstacles I face:
 
 Oct 22,2019
-	What I did yesterday:
+	What I did yesterday:  
 	What I will do today:
 	Obstacles I face:
 
 Oct 23,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  //
+	What I will do today:  understand the git branch and merge and added committed and pushed members.txt. 
+	Obstacles I face:  no
 
 Oct 24,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  understand the git branch and merge
+	What I will do today: Finish checking MVC and Othello can run in my machine
+	Obstacles I face:  some issues about jdk 1.80, but fix it successully
 
 Oct 25,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:   Finish checking MVC and Othello can run in my machine
+	What I will do today:  Finish UserStoryBug0.01 and commit and push to that branch and merge it to master
+	Obstacles I face: I merge it to master because I believe it's done.
 
 Oct 26,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Finish UserStoryBug0.01 and commit and push to that branch and merge it to master
+	What I will do today: thinking about the USER STORY 1.01
+	Obstacles I face:  haven't figured out the optimal solution
 
 Oct 27,2019
 	What I did yesterday:
