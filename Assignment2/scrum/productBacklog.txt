@@ -4,9 +4,9 @@
 --------------------------------------------------------------------------
 TYPE     : BUG 0.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Configure and use system
-OWNER    : 
+OWNER    : XuWencai
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hour  ACTUAL :  2 hour
 ISSUE    : Member 1 
 - demonstrates that they have added, committed and pushed members.txt. 
 - demonstrates that they can run OthelloControllerHumanVSHuman on their dev platform
@@ -48,9 +48,9 @@ ISSUE    : Member 4
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.01 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : OthelloGUI Click Registration
-OWNER    : 
+OWNER    : XuWencai
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 1 hour    ACTUAL :  1 hour
 ISSUE    : User can now click on an 8x8 grid of buttons used by the 
 OthelloApplication. At this stage, a click results in a print out of 
 the (row,col) that the user clicked.

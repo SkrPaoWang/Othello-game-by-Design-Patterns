@@ -1,57 +1,66 @@
 package ca.utoronto.utm.othello.viewcontroller;
-//import ca.utoronto.utm.othello.model.*;
-//
-//import javafx.application.Application;
-//import javafx.event.ActionEvent;
-//import javafx.geometry.Insets;
-//import javafx.scene.Scene;
-//import javafx.scene.control.Button;
-//import javafx.scene.control.TextField;
-//import javafx.scene.layout.GridPane;
-//import javafx.scene.layout.HBox;
-//import javafx.scene.layout.VBox;
-//import javafx.stage.Stage;
 
-public class OthelloApplication  {
-		public static void main(String args[]) {
-			System.out.println(1);
-		}
-	}
-	// REMEMBER: To run this in the lab put 
-	// --module-path "/usr/share/openjfx/lib" --add-modules javafx.controls,javafx.fxml
+import ca.utoronto.utm.othello.model.*;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class OthelloApplication extends Application {
+
+	// REMEMBER: To run this in the lab put
+	// --module-path "/usr/share/openjfx/lib" --add-modules
+	// javafx.controls,javafx.fxml
 	// in the run configuration under VM arguments.
 	// You can import the JavaFX.prototype launch configuration and use it as well.
-	
-//	public static void main(String[] args) {
-////		OthelloApplication view = new OthelloApplication();
-////		launch(args);
-//		System.out.print(1);
-//	}
-	
-	//@Override
-	//public void start(Stage stage) throws Exception {
+
+	public static void main(String[] args) {
+		OthelloApplication view = new OthelloApplication();
+		launch(args);
+
+	}
+
+	@Override
+	public void start(Stage stage) throws Exception {
 		// Create and hook up the Model, View and the controller
-		
+
 		// MODEL
-//		Othello othello=new Othello();
-		
+		Othello othello = new Othello();
+
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
-	
+
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		// MODEL->VIEW hookup
-		
-		//GridPane grid = new GridPane();
-//		HBox grid = new HBox(5);
-//		// SCENE
-//		Scene scene = new Scene(grid); 
-//		stage.setTitle("Othello");
-//		stage.setScene(scene);
-//				
-//		// LAUNCH THE GUI
-//		stage.show();
-//	}
 
+		GridPane grid = new GridPane();
+		// SCENE
+		 
+	                
+		grid.setPadding(new Insets(10,10,10,10));
+		grid.setVgap(8);
+		grid.setHgap(10);
+		for (byte i =1; i<9; i++) {
+			for (byte j = 1; j < 9; j++) {
+				Button x = new Button();
+				grid.add(x, j, i);;
+				byte row = i; byte col = j;
+				x.setOnAction(e ->System.out.println(new Move(row,col)));
+			}
+		}
+		Scene scene = new Scene(grid,400,400);
+		stage.setTitle("Othello");
+		stage.setScene(scene);
 
-
+		// LAUNCH THE GUI
+		stage.show();
+	}
+}
