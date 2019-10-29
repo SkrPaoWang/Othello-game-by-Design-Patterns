@@ -20,6 +20,7 @@ public class OthelloController implements EventHandler<ActionEvent>{
 	    Move move = new Move(rowIndex,colIndex);
 	    this.othello.move(move.getRow(), move.getCol());
 	    System.out.println(othello.getBoardString());
+	    //finish 1.012
 	    
 	
 		
