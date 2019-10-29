@@ -102,8 +102,8 @@ now to create a good architecture, rather than clean up a lot of code later.
 TYPE     : USER STORY 1.03 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Whos Next
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+PRIORITY : 1
+ESTIMATE : 1 hour    ACTUAL :  1 hour
 ISSUE    : When users play HumanVSHuman, the player that moves next is on display, 
 correctly showing the token of the next player to make a move.
 --------------------------------------------------------------------------
