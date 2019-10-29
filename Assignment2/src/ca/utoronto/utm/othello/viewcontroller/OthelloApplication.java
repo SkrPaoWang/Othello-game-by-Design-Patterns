@@ -36,26 +36,26 @@ public class OthelloApplication extends Application {
 
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
+		
+		OthelloController controller = new OthelloController(othello);
 
 		// VIEW
 		// VIEW->CONTROLLER hookup
-		// MODEL->VIEW hookup
-
 		GridPane grid = new GridPane();
-		// SCENE
-		 
-	                
 		grid.setPadding(new Insets(10,10,10,10));
 		grid.setVgap(8);
 		grid.setHgap(10);
-		for (byte i =1; i<9; i++) {
-			for (byte j = 1; j < 9; j++) {
+		for (byte i =0; i<8; i++) {
+			for (byte j = 0; j < 8; j++) {
 				Button x = new Button();
-				grid.add(x, j, i);;
-				byte row = i; byte col = j;
-				x.setOnAction(e ->System.out.println(new Move(row,col)));
+				grid.add(x, j, i);
+				x.setOnAction(controller);
 			}
 		}
+		// MODEL->VIEW hookup
+
+		
+		// SCENE
 		Scene scene = new Scene(grid,400,400);
 		stage.setTitle("Othello");
 		stage.setScene(scene);
