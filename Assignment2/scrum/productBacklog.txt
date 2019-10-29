@@ -80,21 +80,21 @@ for Human vs Human play. Now when the user clicks a button, the resulting
 board is printed on the console. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.02 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.02 : UTORID : STATUS : Complete
 NAME     : Othello Board Human VS Human
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+PRIORITY : 1
+ESTIMATE : 2 hour   ACTUAL :  2 hour
 ISSUE    : The users can now use the OthelloGUI created in US1.012 
 for Human vs Human play. The grid buttons simply show X and O text
 labels for the buttons. There is no longer a console display as in 1.012.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.021 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : BUG 1.021 : UTORID : STATUS : Complete
 NAME     : Check Architecture
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+PRIORITY : 1
+ESTIMATE : 1 hour   ACTUAL :  1 hour
 ISSUE    : If your code is not MVC right now, fix it to MVC. Pay the price
 now to create a good architecture, rather than clean up a lot of code later.
 --------------------------------------------------------------------------

@@ -18,13 +18,7 @@ public class OthelloController implements EventHandler<ActionEvent>{
 		Integer colIndex = GridPane.getColumnIndex(source);
 	    Integer rowIndex = GridPane.getRowIndex(source);
 	    Move move = new Move(rowIndex,colIndex);
-	    this.othello.move(move.getRow(), move.getCol());
-	    System.out.println(othello.getBoardString());
-	    //finish 1.012
-	    
-	
-		
-		
+	    this.othello.make_chage(move.getRow(), move.getCol());	
 	}
 
 }

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -22,7 +23,7 @@ public class OthelloApplication extends Application {
 	// You can import the JavaFX.prototype launch configuration and use it as well.
 
 	public static void main(String[] args) {
-		OthelloApplication view = new OthelloApplication();
+		//OthelloApplication view = new OthelloApplication();
 		launch(args);
 
 	}
@@ -33,30 +34,22 @@ public class OthelloApplication extends Application {
 
 		// MODEL
 		Othello othello = new Othello();
-
+		
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
 		
 		OthelloController controller = new OthelloController(othello);
-
 		// VIEW
 		// VIEW->CONTROLLER hookup
-		GridPane grid = new GridPane();
-		grid.setPadding(new Insets(10,10,10,10));
-		grid.setVgap(8);
-		grid.setHgap(10);
-		for (byte i =0; i<8; i++) {
-			for (byte j = 0; j < 8; j++) {
-				Button x = new Button();
-				grid.add(x, j, i);
-				x.setOnAction(controller);
-			}
-		}
+		
+		OthelloView view = new OthelloView(controller);
 		// MODEL->VIEW hookup
+		
+		othello.attach(view);
 
 		
 		// SCENE
-		Scene scene = new Scene(grid,400,400);
+		Scene scene = new Scene(view.grid,400,400);
 		stage.setTitle("Othello");
 		stage.setScene(scene);
 
