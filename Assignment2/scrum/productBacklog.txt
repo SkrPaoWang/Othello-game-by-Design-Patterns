@@ -99,7 +99,7 @@ ISSUE    : If your code is not MVC right now, fix it to MVC. Pay the price
 now to create a good architecture, rather than clean up a lot of code later.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.03 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.03 : UTORID : STATUS : Complete
 NAME     : Whos Next
 OWNER    : 
 PRIORITY : 1
@@ -111,8 +111,8 @@ correctly showing the token of the next player to make a move.
 TYPE     : USER STORY 1.04 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
 NAME     : Token Counter
 OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+PRIORITY : 1
+ESTIMATE : 1 hour ACTUAL :  1 hour
 ISSUE    : When user play, the count for each player is on display. 
 This count shows the 
 current number of P1 tokens and P2 tokens on the board.

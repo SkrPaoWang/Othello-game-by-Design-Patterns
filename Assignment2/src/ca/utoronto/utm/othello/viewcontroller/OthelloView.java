@@ -16,16 +16,18 @@ import javafx.scene.layout.GridPane;
 public class OthelloView implements Observer {
 	public GridPane grid;
 	private Label labelwhoturns; 
-	private Label labelcountX;
-	private Label labelcountO;
+	private Label labelcountX; Label labelcountO;
+	private Label game_status;
 	public OthelloView(OthelloController controller) {
 		this.labelwhoturns = new Label("X moves Next");
 		this.labelcountX = new Label("X : 2");
 		this.labelcountO = new Label("O : 2");
+		this.game_status = new Label("Game in Progress");
 		this.grid =  new GridPane();
 		this.grid.add(labelwhoturns, 10, 10);
 		this.grid.add(labelcountX, 10, 11);
 		this.grid.add(labelcountO, 10, 12);
+		this.grid.add(game_status, 10, 13);
 		grid.setPadding(new Insets(10, 10, 10, 10));
 		grid.setVgap(8);
 		grid.setHgap(10);
@@ -63,6 +65,8 @@ public class OthelloView implements Observer {
 		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
 		this.labelcountX.setText("X : " + String.valueOf(othello.getCount('X')));
 		this.labelcountO.setText("O : " + String.valueOf(othello.getCount('O')));
+		if (othello.isGameOver()) {
+			this.game_status.setText("The game is over and winner is " + othello.getWinner());}
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
 				Object element = this.getNode(row, col, this.grid);
@@ -83,4 +87,4 @@ public class OthelloView implements Observer {
 	}
 }
 
-//finish userstory1.0
+//finish userstory1.05
