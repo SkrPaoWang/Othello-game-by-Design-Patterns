@@ -10,13 +10,16 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class OthelloView implements Observer {
 	public GridPane grid;
+	private Label label;
 	public OthelloView(OthelloController controller) {
-		GridPane grid = new GridPane();
-		this.grid = grid;
+		this.label = new Label("X moves Next");
+		this.grid =  new GridPane();
+		this.grid.add(label, 10, 10);
 		grid.setPadding(new Insets(10, 10, 10, 10));
 		grid.setVgap(8);
 		grid.setHgap(10);
@@ -51,6 +54,7 @@ public class OthelloView implements Observer {
 	@Override
 	public void update(Observable o) {
 		Othello othello = (Othello) o;
+		this.label.setText(othello.getWhosTurn() + " moves Next");
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
 				Object element = this.getNode(row, col, this.grid);
