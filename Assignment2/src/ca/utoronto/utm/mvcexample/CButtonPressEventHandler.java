@@ -3,7 +3,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-
 public class CButtonPressEventHandler implements EventHandler<ActionEvent> {
 	private MCounter mcounter;
 	public CButtonPressEventHandler(MCounter mcounter) {

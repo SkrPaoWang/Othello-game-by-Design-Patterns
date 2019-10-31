@@ -88,3 +88,4 @@ public class OthelloView implements Observer {
 }
 
 //finish userstory1.05
+
