@@ -21,6 +21,8 @@ public class OthelloApplication extends Application {
 	// javafx.controls,javafx.fxml
 	// in the run configuration under VM arguments.
 	// You can import the JavaFX.prototype launch configuration and use it as well.
+	Stage firstwin;
+	Scene option, game;
 
 	public static void main(String[] args) {
 		//OthelloApplication view = new OthelloApplication();
@@ -31,7 +33,6 @@ public class OthelloApplication extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		// Create and hook up the Model, View and the controller
-
 		// MODEL
 		Othello othello = new Othello();
 		
@@ -46,14 +47,23 @@ public class OthelloApplication extends Application {
 		// MODEL->VIEW hookup
 		
 		othello.attach(view);
-
-		
 		// SCENE
-		Scene scene = new Scene(view.grid,400,400);
-		stage.setTitle("Othello");
-		stage.setScene(scene);
-
+		
+		Scene game = new Scene(view.grid,400,400);
+		// The window contains 3 buttons
+		firstwin = stage;
+		Button button1 = new Button("Human vs Human");
+		Button button2 = new Button("Human vs Greedy");
+		Button button3 = new Button("Human vs Random");
+		button1.setOnAction(e -> firstwin.setScene(game));
+		button2.setOnAction(e -> firstwin.setScene(game));
+		button3.setOnAction(e -> firstwin.setScene(game));
+		VBox layout1 = new VBox(20);
+		layout1.getChildren().addAll(button1,button2,button3);
+		option = new Scene(layout1, 200, 200);
+		firstwin.setTitle("Othello");
+		firstwin.setScene(option);
 		// LAUNCH THE GUI
-		stage.show();
+		firstwin.show();
 	}
 }
