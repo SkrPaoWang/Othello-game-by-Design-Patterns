@@ -76,6 +76,8 @@ public class OthelloView implements Observer {
 			}
 		}
 	}
+	
+	//aa
 
 	private Node getNode(int row, int column, GridPane gridPane) {
 		Node result = null;
