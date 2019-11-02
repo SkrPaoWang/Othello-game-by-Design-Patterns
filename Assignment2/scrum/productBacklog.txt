@@ -141,7 +141,7 @@ TYPE     : USER STORY 1.07 : UTORID : STATUS : NotStarted (NotStarted,InProgress
 NAME     : Opponent Chooser GUI Selection
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 4 hours    ACTUAL : 3 hours + 1 hours debugging  
 ISSUE    : When users are playing, they see a GUI which allows the user to 
 choose whether to play HumanVSHuman, HumanVSGreedy, HumanVSRandom.
 This user story involves
@@ -155,7 +155,7 @@ TYPE     : USER STORY 1.071 : UTORID : STATUS : NotStarted (NotStarted,InProgres
 NAME     : Opponent Chooser GUI Display
 OWNER    : 
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 4 hours    ACTUAL :  2 hours
 ISSUE    : An extension to Opponent Chooser, the current player types
 are on display, so for example, 
 P1: Human  P2: Greedy 

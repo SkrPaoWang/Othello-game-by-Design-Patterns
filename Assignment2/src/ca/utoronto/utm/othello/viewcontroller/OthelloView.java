@@ -13,15 +13,11 @@ import javafx.scene.layout.GridPane;
 
 public class OthelloView implements Observer {
 	public GridPane grid;
-	private Label labelwhoturns;
-	Label labelcountX;
-	Label labelcountO;
-	private Label game_status;
-	private Label P1;
-	Label P2;
+	private Label labelwhoturns;Label game_status;
+	Label labelcountX; Label labelcountO;
+	private Label P1; Label P2;
 	ChoiceBox<String> choicebox;
 	private OthelloController controller;
-
 	public OthelloView(OthelloController controller) {
 		this.controller = controller;
 		this.choicebox = new ChoiceBox<>();
@@ -48,7 +44,6 @@ public class OthelloView implements Observer {
 		this.P1 = new Label("P1: Human");
 		this.P2 = new Label("P2:");
 		this.game_status = new Label("Game in Progress");
-
 		this.P1 = new Label("P1:Human");
 		this.P2 = new Label("P2:Human");
 		this.grid = new GridPane();
@@ -59,6 +54,21 @@ public class OthelloView implements Observer {
 		this.grid.add(game_status, 9, 4);
 		this.grid.add(P1, 9, 5);
 		this.grid.add(P2, 9, 6);
+
+//		this.grid =  new GridPane();
+//		this.grid.add(labelwhoturns, 10, 10);
+//		this.grid.add(labelcountX, 10, 11);
+//		this.grid.add(labelcountO, 10, 12);
+//		this.grid.add(game_status, 10, 13);
+//		this.grid.add(P1,10,14);
+//		this.grid.add(P2,10,15);
+//		this.grid.add(button1, 10,1);
+//		this.grid.add(button2, 10,2);
+//		this.grid.add(button3, 10,3);
+//		button1.setOnAction(controller2);
+//		button2.setOnAction(e -> this.P2.setText("P2: Random"));
+//		button3.setOnAction(e -> this.P2.setText("P2: Greedy"));
+
 		grid.setPadding(new Insets(10, 10, 10, 10));
 		grid.setVgap(8);
 		grid.setHgap(10);
@@ -76,8 +86,8 @@ public class OthelloView implements Observer {
 			}
 		}
 	}
-	
-	//aa
+
+	// aa
 
 	private Node getNode(int row, int column, GridPane gridPane) {
 		Node result = null;

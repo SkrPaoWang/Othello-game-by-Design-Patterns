@@ -11,13 +11,11 @@ import javafx.scene.layout.GridPane;
 
 public class OthelloController implements EventHandler<ActionEvent> {
 	private Othello othello;
-
 	public String robot = "Human";
 
 	public OthelloController(Othello othello) {
 		this.othello = othello;
 	}
-
 	public void handle(ActionEvent event) {
 		Button source = (Button) event.getSource();
 		if (this.robot == "Human") {
@@ -47,7 +45,5 @@ public class OthelloController implements EventHandler<ActionEvent> {
 				this.othello.make_chage(move4.getRow(), move4.getCol());
 			}
 		}
-
 	}
-
 }

@@ -52,39 +52,40 @@ Oct 26,2019
 	Obstacles I face:
 
 Oct 27,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: 
+	What I will do today: Setting up the environment and try to get start working
+	Obstacles I face: Don't fully understand how SCRUM works.
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: The environment is set up perfectly, the JDK is 1.8
+	What I will do today: Understand better what SCRUM is and start working. 
+	Obstacles I face: MVC with application is new to me. 
 
 Oct 29,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Have a deeper understanding of what MVC is. 
+	What I will do today: Read through the code done by my team member from the beginning to USERSTORY 1.5 
+	Attend the meeting and figure out what part I should be doing and start working on it. (1.07 is my part)
+	Obstacles I face: Understand my friend's work is hard.
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fully understand what my friend has done and starts working on my part.(1.07)  
+	What I will do today: Try to Finish 1.07 and working on 1.071
+	Obstacles I face: bug: one button won't show
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Working on 1.07
+	What I will do today: STUDY FOR CCT TEST
 	Obstacles I face:
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: STUDY FOR TEST
+	What I will do today: STUDY FOR ANOTHER CSC207 TEST
 	Obstacles I face:
 
 Nov 2,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: STUDY FOR CSC207 TEST
+	What I will do today: FINISH UP 1.07 and work on 1.071
+	Obstacles I face: 
 
 Nov 3,2019
 	What I did yesterday:
