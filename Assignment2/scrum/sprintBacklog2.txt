@@ -39,9 +39,9 @@ for Human vs Human play. Now when the user clicks a button, the resulting
 board is printed on the console. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.02 : UTORID :xuwencai STATUS : Complete
+TYPE     : USER STORY 1.02 : UTORID :liuya106 STATUS : Complete
 NAME     : Othello Board Human VS Human
-OWNER    : XuWencai
+OWNER    : Yang Liu
 PRIORITY : 1
 ESTIMATE : 2 hour   ACTUAL :  2 hour
 ISSUE    : The users can now use the OthelloGUI created in US1.012 
