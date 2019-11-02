@@ -62,10 +62,12 @@ public class Othello extends Observable{
 			return false;
 		}
 	}
-	public void make_chage(int row, int col) {
+	public boolean make_chage(int row, int col) {
 		if (this.move(row, col)){
 			this.notifyObservers();
+			return true;
 		}
+		return false;
 	}
 
 

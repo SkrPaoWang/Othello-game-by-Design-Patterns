@@ -44,14 +44,17 @@ public class OthelloApplication extends Application {
 		
 		OthelloView view = new OthelloView(controller);
 		// MODEL->VIEW hookup
-		
+	
 		othello.attach(view);
-
+        
 		
 		// SCENE
-		Scene scene = new Scene(view.grid,400,400);
+		First_page first_page = new First_page();
+		Scene scene1 = new Scene(first_page.pane);
+		Scene scene2 = new Scene(view.grid,500,500);
+		first_page.x1.setOnAction(e -> stage.setScene(scene2));
 		stage.setTitle("Othello");
-		stage.setScene(scene);
+		stage.setScene(scene1);
 
 		// LAUNCH THE GUI
 		stage.show();
