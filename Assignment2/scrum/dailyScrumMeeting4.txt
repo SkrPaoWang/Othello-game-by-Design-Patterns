@@ -68,26 +68,26 @@ Oct 29,2019
 
 Oct 30,2019
 	What I did yesterday:US 1.01
-	What I will do today:US 1.012
+	What I will do today:US 1.02
 	Obstacles I face:read code written by other teammates
 
 Oct 31,2019
 	What I did yesterday:understand my teammates' code
-	What I will do today:US1.012
-	Obstacles I face: nothing
+	What I will do today:US1.02
+	Obstacles I face: debugging and make my code compatile with teammates
 
 Nov 1,2019
-	What I did yesterday: US1.012
-	What I will do today:US1.02
-	Obstacles I face:nothing
+	What I did yesterday: US1.02
+	What I will do today:US1.06
+	Obstacles I face:learn about grabbing png files and put it on button
 
 Nov 2,2019
-	What I did yesterday:US1.02
-	What I will do today:US1.03
-	Obstacles I face:the format of who moves next textfield
+	What I did yesterday:learn about grabbing png files and put it on button
+	What I will do today:continue with US1.06
+	Obstacles I face:nothing
 
 Nov 3,2019
-	What I did yesterday:
+	What I did yesterday:US 1.06
 	What I will do today:
 	Obstacles I face:
 

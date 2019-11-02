@@ -29,9 +29,9 @@ NOTE: Make sure that you are using good MVC principles in implementing this.
 If you didn't then file BUG 1.012 to fix the implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.012 : UTORID :liuya106 STATUS : Complete
+TYPE     : USER STORY 1.012 : UTORID :zhouli32 STATUS : Complete
 NAME     : OthelloGUI 
-OWNER    : Yang Liu
+OWNER    : Linfeng Zhou
 PRIORITY : 1
 ESTIMATE : 1 hour   ACTUAL :  1 hour
 ISSUE    : The users can now use the OthelloGUI created in US1.011
@@ -86,11 +86,11 @@ ISSUE    : When users play, the current status of the game is on display, showin
 of the winner of the game.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.06 : UTORID :xuwencai STATUS : Complete
+TYPE     : USER STORY 1.06 : UTORID :liuya106 STATUS : Complete
 NAME     : Change tokens to Images
-OWNER    : XuWencai
+OWNER    : Yang Liu
 PRIORITY : 1
-ESTIMATE : 2 hour    ACTUAL :  
+ESTIMATE : 2 hour    ACTUAL :  2 hour
 ISSUE    : When users are playing and the board is on display, 
 instead of displaying X and O as players, the users see 
 appropriate black/white tokens.
