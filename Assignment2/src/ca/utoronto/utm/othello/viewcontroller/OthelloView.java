@@ -18,9 +18,9 @@ public class OthelloView implements Observer {
 	private Label labelwhoturns; 
 	private Label labelcountX; Label labelcountO;
 	private Label game_status;
-	protected Label P1;
-	protected Label P2;
-	public OthelloView(OthelloController controller) {
+	protected static Label P1;
+	protected static Label P2;
+	public OthelloView(OthelloController controller, GameModeController controller2) {
 		Button button1 = new Button("Human vs Human");
 		Button button2 = new Button("Human vs Random");
 		Button button3 = new Button("Human vs Greedy");
@@ -40,7 +40,7 @@ public class OthelloView implements Observer {
 		this.grid.add(button1, 10,1);
 		this.grid.add(button2, 10,2);
 		this.grid.add(button3, 10,3);
-		button1.setOnAction(e -> this.P2.setText("P2: Human"));
+		button1.setOnAction(controller2);
 		button2.setOnAction(e -> this.P2.setText("P2: Random"));
 		button3.setOnAction(e -> this.P2.setText("P2: Greedy"));
 		grid.setPadding(new Insets(10, 10, 10, 10));

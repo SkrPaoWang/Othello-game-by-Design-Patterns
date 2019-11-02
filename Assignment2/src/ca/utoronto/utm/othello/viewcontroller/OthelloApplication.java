@@ -40,10 +40,11 @@ public class OthelloApplication extends Application {
 		// CONTROLLER->MODEL hookup
 		
 		OthelloController controller = new OthelloController(othello);
+		GameModeController controller2 = new GameModeController(othello);
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		
-		OthelloView view = new OthelloView(controller);
+		OthelloView view = new OthelloView(controller, controller2);
 		// MODEL->VIEW hookup
 		
 		othello.attach(view);
