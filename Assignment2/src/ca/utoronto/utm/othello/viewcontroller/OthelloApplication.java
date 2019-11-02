@@ -47,7 +47,7 @@ public class OthelloApplication extends Application {
 		stage.setTitle("Othello");
 		stage.setScene(scene1);
 
-		// LAUNCH THE GUI
+		// LAUNCH THE GUI 123
 		stage.show();
 	}
 }
