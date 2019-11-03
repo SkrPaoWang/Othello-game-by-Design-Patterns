@@ -52,43 +52,43 @@ Oct 26,2019
 	Obstacles I face:  haven't figured out the optimal solution
 
 Oct 27,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: thinking about the USER STORY 1.01
+	What I will do today: Finish User Story1.01
+	Obstacles I face:  No obstacle today
 
 Oct 28,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Finish User Story1.01
+	What I will do today:   Thinking about user story1.02
+	Obstacles I face: have a general idea, but the code still doesn't run
 
 Oct 29,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Thinking about user story1.02
+	What I will do today:    Finish userstory 1.02
+	Obstacles I face:   spend a long time on it, but finish it.
 
 Oct 30,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:    Finish userstory 1.02
+	What I will do today:    Work with teammates for user story 1.03,1.04,1.05
+	Obstacles I face:   Have some arguments,but solved.
 
 Oct 31,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Work with teammates for user story 1.03,1.04,1.05
+	What I will do today:   prepare for the midterm.
+	Obstacles I face:      /
 
 Nov 1,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:   prepare for the midterm. 
+	What I will do today:    Finish a GUI with picture "Iron Man" and "Infinity Stone" which is first scene that the user sees
+	Obstacles I face:   First time dealing with picture, take some time to learn it
 
 Nov 2,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Finish a GUI with picture "Iron Man" and "Infinity Stone" which is first scene that the user sees
+	What I will do today:   Work with teammates for user story 1.08.
+	Obstacles I face:  take a long time to figure out a optimal solution
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Work with teammates for user story 1.08.
+	What I will do today:   
 	Obstacles I face:
 
 Nov 4,2019
