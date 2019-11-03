@@ -18,26 +18,26 @@ Oct 19,2019
 
 Oct 20,2019
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today:Set up environment
+	Obstacles I face: understanding .gitignore file
 
 Oct 21,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Set up enviroment 
+	What I will do today:USER STORY 1.011 
+	Obstacles I face:Basics of JavaFx
 
 Oct 22,2019
-	What I did yesterday:
+	What I did yesterday:USER STORY 1.011 
 	What I will do today:
 	Obstacles I face:
 
 Oct 23,2019
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today:BUG 1.021
+	Obstacles I face: review and read mvc slides 
 
 Oct 24,2019
-	What I did yesterday:
+	What I did yesterday:BUG 1.021
 	What I will do today:
 	Obstacles I face:
 
@@ -83,8 +83,10 @@ Nov 1,2019
 
 Nov 2,2019
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today:USER STORY 1.06:Change tokens to Images
+	Obstacles I face: one line keeps causing bug which is
+	“Image black = new Image(getClass().getResourceAsStream("/black.PNG”));”
+	my teammate helped figued out that I should the png file under directory bin.
 
 Nov 3,2019
 	What I did yesterday:
