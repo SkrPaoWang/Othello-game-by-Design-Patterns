@@ -69,7 +69,9 @@ public class Othello extends Observable{
 		}
 		return false;
 	}
-
+	public void change_turn() {
+		this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
+	}
 
 	/**
 	 * 
