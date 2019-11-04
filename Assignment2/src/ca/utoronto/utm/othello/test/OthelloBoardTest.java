@@ -75,8 +75,8 @@ public class OthelloBoardTest {
 	public void testOthelloBoard() {
 		OthelloBoard b=new OthelloBoard(Othello.DIMENSION);
 		// Check initial position
-		assertEquals(OthelloBoard.P1,b.get(3, 3));
-		assertEquals(b.get(4, 4), OthelloBoard.P1);
+		assertEquals("Initial tokens P1",b.get(3, 3), OthelloBoard.P1);
+		assertEquals("Initial tokens P1",b.get(4, 4), OthelloBoard.P1);
 		assertEquals("Initial tokens P2",b.get(3, 4), OthelloBoard.P2);
 		assertEquals("Initial tokens P2",b.get(4, 3), OthelloBoard.P2);
 		
@@ -149,7 +149,7 @@ public class OthelloBoardTest {
 		assertEquals(board.get(2,7), OthelloBoard.EMPTY);
 		
 		String beforeMove=board.toString(); // To verify that the board has not changed
-		assertFalse( board.move(2, 3, OthelloBoard.P1));
+		assertFalse("bad move spot occupied", board.move(2, 3, OthelloBoard.P1));
 		assertTrue("board unchanged for bad move",beforeMove.equals(board.toString())); 
 		assertFalse("bad move spot occupied", board.move(2, 4, OthelloBoard.P1));
 		assertTrue("board unchanged for bad move",beforeMove.equals(board.toString())); 

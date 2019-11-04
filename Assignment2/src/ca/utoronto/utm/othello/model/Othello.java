@@ -57,21 +57,13 @@ public class Othello extends Observable{
 			char allowedMove = board.hasMove();
 			if(allowedMove!=OthelloBoard.BOTH)this.whosTurn=allowedMove;
 			this.numMoves++;
+			this.notifyObservers();
 			return true;
 		} else {
 			return false;
 		}
 	}
-	public boolean make_chage(int row, int col) {
-		if (this.move(row, col)){
-			this.notifyObservers();
-			return true;
-		}
-		return false;
-	}
-	public void change_turn() {
-		this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
-	}
+
 
 	/**
 	 * 
