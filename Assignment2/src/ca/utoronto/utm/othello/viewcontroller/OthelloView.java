@@ -26,12 +26,12 @@ public class OthelloView implements Observer {
 	private Label game_status;
 	private Label P1; Label P2;
 	ChoiceBox<String> choicebox;
-	private OthelloController controller; private MenuController controller2;
+	private GameController controller; private MenuController controller2;
 	private Image black = new Image("file:black.png");
 	private Image white = new Image("file:white.png");
 	public BorderPane pane; private GridPane grid;
 	
-	public OthelloView(OthelloController controller, MenuController controller2) {
+	public OthelloView(GameController controller, MenuController controller2) {
 		this.pane = new BorderPane();
 		this.controller = controller;this.controller2 = controller2;
 		this.pane.setTop(this.set_menu());
@@ -88,13 +88,17 @@ public class OthelloView implements Observer {
 	private MenuBar set_menu() {
 		MenuBar menuBar = new MenuBar();
 		Menu help = new Menu("Help");
-		Menu caonima = new Menu("CAO NI MA");
-		menuBar.getMenus().addAll(help,caonima);
+		Menu caonima = new Menu("wannima");
+		Menu restart = new Menu("Restart");
+		menuBar.getMenus().addAll(help,caonima,restart);
 		MenuItem greedy = new MenuItem("Greedy Hint");
 		MenuItem random = new MenuItem("Random Hint");
+		MenuItem restart_game = new MenuItem("Restart Game");
 		help.getItems().addAll(greedy,random);
+		restart.getItems().addAll(restart_game);
 		greedy.setOnAction(this.controller2);
 		random.setOnAction(this.controller2);
+		restart_game.setOnAction(this.controller2);
 		return menuBar;
 	}
 	
@@ -121,6 +125,7 @@ public class OthelloView implements Observer {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
 			b.setStyle( "-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
 		Othello othello = (Othello) o;
+		System.out.println(othello.getCount('X'));
 		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
 		this.labelcountX.setText("X : " + String.valueOf(othello.getCount('X')));
 		this.labelcountO.setText("O : " + String.valueOf(othello.getCount('O')));

@@ -113,6 +113,13 @@ public class Othello extends Observable{
 		o.whosTurn = this.whosTurn;
 		return o;
 	}
+	
+	public void restart_game() {
+		this.board= new OthelloBoard(8);
+		this.numMoves = 0;
+		this.whosTurn = 'X';
+		this.notifyObservers();
+	}
 
 
 	/**

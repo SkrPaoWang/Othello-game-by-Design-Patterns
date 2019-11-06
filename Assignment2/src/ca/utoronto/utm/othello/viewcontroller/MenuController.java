@@ -16,18 +16,22 @@ public class MenuController implements EventHandler<ActionEvent> {
 	}
 
 	public void handle(ActionEvent event) {
+		
 		MenuItem item = (MenuItem) event.getSource();
 		if (item.getText() == "Greedy Hint") {
 			PlayerGreedy greedy = new PlayerGreedy(othello, this.othello.getWhosTurn());
 			this.hint_move= greedy.getMove();
 			this.othello.notifyObservers();
 		}else if  (item.getText() == "Random Hint"){
-			System.out.println(1);
 			PlayerRandom random = new PlayerRandom(othello, this.othello.getWhosTurn());
 			this.hint_move= random.getMove();
 			this.othello.notifyObservers();
-			
+		}else {
+			this.othello.restart_game();
 		}
 
+		
+		
 	}
 }
+		

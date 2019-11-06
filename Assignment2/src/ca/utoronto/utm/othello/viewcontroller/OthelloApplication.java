@@ -38,7 +38,7 @@ public class OthelloApplication extends Application {
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
 		
-		OthelloController controller = new OthelloController(othello);
+		GameController controller = new GameController(othello);
 		MenuController menu_control = new MenuController(othello);
 		// VIEW
 		// VIEW->CONTROLLER hookup

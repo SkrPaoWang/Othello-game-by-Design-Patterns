@@ -10,11 +10,11 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-public class OthelloController implements EventHandler<ActionEvent> {
+public class GameController implements EventHandler<ActionEvent> {
 	private Othello othello;
 	public String robot = "Human";
 
-	public OthelloController(Othello othello) {
+	public GameController(Othello othello) {
 		this.othello = othello;
 	}
 	public void handle(ActionEvent event) {
