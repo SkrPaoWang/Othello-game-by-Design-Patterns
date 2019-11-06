@@ -1,6 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
 import javafx.collections.ObservableList;
@@ -9,17 +10,24 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 public class OthelloView implements Observer {
 	public GridPane grid;
-	private Label labelwhoturns; Label labelcountX; Label labelcountO;
+	private Label labelwhoturns;
+	Label labelcountX;
+	Label labelcountO;
 	private Label game_status;
-	private Label P1; Label P2;
+	private Label P1;Label P2;
 	ChoiceBox<String> choicebox;
 	private OthelloController controller;
-
+	private Image black = new Image("file:black.png"); 
+	private Image white = new Image("file:white.png");
+	
 	public OthelloView(OthelloController controller) {
+		
 		this.controller = controller;
 		this.choicebox = new ChoiceBox<>();
 		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Random");
@@ -39,48 +47,47 @@ public class OthelloView implements Observer {
 			}
 		});
 		this.labelwhoturns = new Label("X moves Next");
-		this.labelcountX = new Label("X : 2");
-		this.labelcountO = new Label("O : 2");
+		this.labelcountX = new Label("X : 2");this.labelcountO = new Label("O : 2");
 		this.game_status = new Label("Game in Progress");
-		this.P1 = new Label("P1:Human");
-		this.P2 = new Label("P2:Human");
+		this.P1 = new Label("P1:Human");this.P2 = new Label("P2:Human");
 		this.grid = new GridPane();
 		this.grid.add(choicebox, 9, 0);
 		this.grid.add(labelwhoturns, 9, 1);
 		this.grid.add(labelcountX, 9, 2);
 		this.grid.add(labelcountO, 9, 3);
 		this.grid.add(game_status, 9, 4);
-		this.grid.add(P1, 9, 5);
-		this.grid.add(P2, 9, 6);
-		grid.setPadding(new Insets(10, 10, 10, 10));
-		grid.setVgap(8);
-		grid.setHgap(10);
+		this.grid.add(P1, 9, 5);this.grid.add(P2, 9, 6);
+		grid.setPadding(new Insets(10, 50, 50, 50));
+		grid.setVgap(2);grid.setHgap(2);
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
+				Button button = new Button("");
+				button.setStyle("-fx-background-radius: 5em; " +"-fx-min-width: 30px; " +
+				        "-fx-min-height: 30px; " +"-fx-max-width: 30px; " +"-fx-max-height: 30px;");
 				if ((i == 3 && j == 3) || (i == 4 && j == 4)) {
-					grid.add(new Label("X"), j, i);
+					ImageView image = new ImageView(black);
+					image.setFitHeight(30);image.setFitWidth(30);
+					button.setGraphic(image);
+					grid.add(button, j, i);
 				} else if ((i == 3 && j == 4) || (i == 4 && j == 3)) {
-					grid.add(new Label("O"), j, i);
+					ImageView image = new ImageView(white);
+					image.setFitHeight(30);image.setFitWidth(30);
+					button.setGraphic(image);
+					grid.add(button, j, i);
 				} else {
-					Button x = new Button();
-					grid.add(x, j, i);
-					x.setOnAction(controller);
+					grid.add(button, j, i);
+					button.setOnAction(controller);
 				}
 			}
 		}
 	}
+	
 
 	private Node getNode(int row, int column, GridPane gridPane) {
-		Node result = null;
-		ObservableList<Node> childrens = gridPane.getChildren();
-		for (Node node : childrens) {
+		for (Node node : gridPane.getChildren()) {
 			if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-				result = node;
-				break;
-			}
-		}
-		return result;
-	}
+		        return node;}}
+		return null;}
 
 	@Override
 	public void update(Observable o) {
@@ -93,21 +100,17 @@ public class OthelloView implements Observer {
 		}
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
-				Object element = this.getNode(row, col, this.grid);
-				char token = othello.getToken(row, col);
-				if (!(element instanceof Button) && token != ' ') {
-					Label label = (Label) element;
-					char c = label.getText().charAt(0);
-					if (c != token) {
-						label.setText("" + token);
-					}
-				}
-				if ((token == 'X' || token == 'O') && element instanceof Button) {
-					grid.getChildren().remove(element);
-					grid.add((token == 'X') ? new Label("X") : new Label("O"), col, row);
+				if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
+					ImageView image = (othello.getToken(row, col) == 'X') ? new ImageView(black) : new ImageView(white);
+					image.setFitHeight(30);image.setFitWidth(30);
+					Button button = new Button("");
+					button.setStyle("-fx-background-radius: 5em; " +"-fx-min-width: 30px; " +
+			        "-fx-min-height: 30px; " +"-fx-max-width: 30px; " +"-fx-max-height: 30px;");
+					button.setGraphic(image);
+					this.grid.getChildren().remove(this.getNode(row, col, this.grid));
+					this.grid.add(button, col, row);
 				}
 			}
 		}
 	}
 }
-
