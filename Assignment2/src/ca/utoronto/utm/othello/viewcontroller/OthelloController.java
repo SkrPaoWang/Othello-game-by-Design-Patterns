@@ -17,7 +17,6 @@ public class OthelloController implements EventHandler<ActionEvent> {
 	public OthelloController(Othello othello) {
 		this.othello = othello;
 	}
-
 	public void handle(ActionEvent event) {
 		Button source = (Button) event.getSource();
 		if (this.robot == "Human") {

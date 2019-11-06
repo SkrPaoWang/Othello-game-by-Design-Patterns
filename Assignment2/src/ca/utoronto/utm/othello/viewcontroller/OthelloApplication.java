@@ -39,10 +39,11 @@ public class OthelloApplication extends Application {
 		// CONTROLLER->MODEL hookup
 		
 		OthelloController controller = new OthelloController(othello);
+		MenuController menu_control = new MenuController(othello);
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		
-		OthelloView view = new OthelloView(controller);
+		OthelloView view = new OthelloView(controller,menu_control);
 		// MODEL->VIEW hookup
 	
 		othello.attach(view);
@@ -51,7 +52,7 @@ public class OthelloApplication extends Application {
 		// SCENE
 		First_page first_page = new First_page();
 		Scene scene1 = new Scene(first_page.pane);
-		Scene scene2 = new Scene(view.grid,500,500);
+		Scene scene2 = new Scene(view.pane,500,500);
 		first_page.x1.setOnAction(e -> stage.setScene(scene2));
 		stage.setTitle("Othello");
 		stage.setScene(scene1);
