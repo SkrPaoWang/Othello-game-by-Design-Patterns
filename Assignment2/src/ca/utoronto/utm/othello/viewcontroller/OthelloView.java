@@ -4,9 +4,6 @@ import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -35,13 +32,13 @@ public class OthelloView implements Observer {
 	public BorderPane pane;
 	private GridPane grid;
 
-	public OthelloView(GameController controller, MenuController controller2) {	
+	public OthelloView(GameController controller, MenuController controller2) {
 		this.controller = controller;
 		this.controller2 = controller2;
 		this.init_choicebox();
 		this.init_chessboard();
 	}
-	
+
 	private void init_choicebox() {
 		this.choicebox = new ChoiceBox<>();
 		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Random");
@@ -61,7 +58,7 @@ public class OthelloView implements Observer {
 			}
 		});
 	}
-	
+
 	private void init_chessboard() {
 		this.pane = new BorderPane();
 		this.pane.setTop(this.set_menu());
@@ -96,7 +93,7 @@ public class OthelloView implements Observer {
 			}
 		}
 		this.pane.setCenter(this.grid);
-		
+
 	}
 
 	private MenuBar set_menu() {
@@ -141,7 +138,8 @@ public class OthelloView implements Observer {
 	public void update(Observable o) {
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
+		};
 		Othello othello = (Othello) o;
 		System.out.println(othello.getCount('X'));
 		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
@@ -152,14 +150,10 @@ public class OthelloView implements Observer {
 		}
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
-				//if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
-					System.out.print(1);
-					this.grid.getChildren().remove(this.getNode(row, col, this.grid));
+				if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
 					this.grid.add(button_image(othello.getToken(row, col)), col, row);
-//				}
-
+				}
 			}
 		}
 	}
 }
-//}
