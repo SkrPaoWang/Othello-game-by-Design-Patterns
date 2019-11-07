@@ -1,5 +1,5 @@
-package ca.utoronto.utm.othello.viewcontroller;
 
+package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.PlayerGreedy;
@@ -9,14 +9,14 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-public class OthelloEventHandler implements EventHandler<ActionEvent> {
-	//mode handler
+public class GameController implements EventHandler<ActionEvent> {
 	private Othello othello;
 	public String robot = "Human";
 
-	public OthelloEventHandler(Othello othello) {
+	public GameController(Othello othello) {
 		this.othello = othello;
 	}
+
 	public void handle(ActionEvent event) {
 		Button source = (Button) event.getSource();
 		if (this.robot == "Human") {
@@ -47,4 +47,5 @@ public class OthelloEventHandler implements EventHandler<ActionEvent> {
 			}
 		}
 	}
+
 }
