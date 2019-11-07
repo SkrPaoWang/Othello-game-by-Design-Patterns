@@ -22,19 +22,27 @@ import javafx.scene.layout.GridPane;
 
 public class OthelloView implements Observer {
 	private Label labelwhoturns;
-	Label labelcountX; Label labelcountO;
+	Label labelcountX;
+	Label labelcountO;
 	private Label game_status;
-	private Label P1; Label P2;
+	private Label P1;
+	Label P2;
 	ChoiceBox<String> choicebox;
-	private GameController controller; private MenuController controller2;
+	private GameController controller;
+	private MenuController controller2;
 	private Image black = new Image("file:black.png");
 	private Image white = new Image("file:white.png");
-	public BorderPane pane; private GridPane grid;
+	public BorderPane pane;
+	private GridPane grid;
+
+	public OthelloView(GameController controller, MenuController controller2) {	
+		this.controller = controller;
+		this.controller2 = controller2;
+		this.init_choicebox();
+		this.init_chessboard();
+	}
 	
-	public OthelloView(GameController controller, MenuController controller2) {
-		this.pane = new BorderPane();
-		this.controller = controller;this.controller2 = controller2;
-		this.pane.setTop(this.set_menu());
+	private void init_choicebox() {
 		this.choicebox = new ChoiceBox<>();
 		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Random");
 		this.choicebox.setValue("Human VS Human");
@@ -52,6 +60,11 @@ public class OthelloView implements Observer {
 				this.controller.robot = "Random";
 			}
 		});
+	}
+	
+	private void init_chessboard() {
+		this.pane = new BorderPane();
+		this.pane.setTop(this.set_menu());
 		this.labelwhoturns = new Label("X moves Next");
 		this.labelcountX = new Label("X : 2");
 		this.labelcountO = new Label("O : 2");
@@ -83,47 +96,52 @@ public class OthelloView implements Observer {
 			}
 		}
 		this.pane.setCenter(this.grid);
+		
 	}
-	
+
 	private MenuBar set_menu() {
 		MenuBar menuBar = new MenuBar();
 		Menu help = new Menu("Help");
 		Menu caonima = new Menu("wannima");
 		Menu restart = new Menu("Restart");
-		menuBar.getMenus().addAll(help,caonima,restart);
+		menuBar.getMenus().addAll(help, caonima, restart);
 		MenuItem greedy = new MenuItem("Greedy Hint");
 		MenuItem random = new MenuItem("Random Hint");
 		MenuItem restart_game = new MenuItem("Restart Game");
-		help.getItems().addAll(greedy,random);
+		help.getItems().addAll(greedy, random);
 		restart.getItems().addAll(restart_game);
 		greedy.setOnAction(this.controller2);
 		random.setOnAction(this.controller2);
 		restart_game.setOnAction(this.controller2);
 		return menuBar;
 	}
-	
 
 	private Node getNode(int row, int column, GridPane gridPane) {
 		for (Node node : gridPane.getChildren()) {
 			if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-				return node;}}
-		return null;}
+				return node;
+			}
+		}
+		return null;
+	}
 
 	private Button button_image(char token) {
 		Button button = new Button("");
-		button.setStyle( "-fx-min-width: 35px; " + "-fx-min-height: 35px; ");
+		button.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; ");
 		if (token != OthelloBoard.EMPTY) {
 			ImageView image = (token == OthelloBoard.P1) ? new ImageView(black) : new ImageView(white);
-			image.setFitHeight(30);image.setFitWidth(30);
-			button.setGraphic(image);}
+			image.setFitHeight(30);
+			image.setFitWidth(30);
+			button.setGraphic(image);
+		}
 		return button;
 	}
 
 	@Override
 	public void update(Observable o) {
-		if(controller2.hint_move!= null) {
+		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle( "-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
 		Othello othello = (Othello) o;
 		System.out.println(othello.getCount('X'));
 		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
@@ -134,11 +152,14 @@ public class OthelloView implements Observer {
 		}
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
-				if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
+				//if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
+					System.out.print(1);
 					this.grid.getChildren().remove(this.getNode(row, col, this.grid));
 					this.grid.add(button_image(othello.getToken(row, col)), col, row);
-				}
+//				}
+
 			}
 		}
 	}
 }
+//}

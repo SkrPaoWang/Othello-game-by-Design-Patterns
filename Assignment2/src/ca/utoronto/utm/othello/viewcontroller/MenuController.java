@@ -10,7 +10,7 @@ import javafx.scene.control.MenuItem;
 
 public class MenuController implements EventHandler<ActionEvent> {
 	private Othello othello;
-    public Move hint_move;
+    public Move hint_move; boolean restart = false;
 	public MenuController(Othello othello) {
 		this.othello = othello;
 	}
@@ -28,6 +28,8 @@ public class MenuController implements EventHandler<ActionEvent> {
 			this.othello.notifyObservers();
 		}else {
 			this.othello.restart_game();
+			this.restart = true;
+			this.hint_move = null;
 		}
 
 		
