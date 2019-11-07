@@ -36,7 +36,7 @@ public class OthelloView implements Observer {
 		this.controller = controller;
 		this.controller2 = controller2;
 		this.init_choicebox();
-		this.init_chessboard();
+		this.init_game_layout();
 	}
 
 	private void init_choicebox() {
@@ -59,7 +59,7 @@ public class OthelloView implements Observer {
 		});
 	}
 
-	private void init_chessboard() {
+	private void init_game_layout() {
 		this.pane = new BorderPane();
 		this.pane.setTop(this.set_menu());
 		this.labelwhoturns = new Label("X moves Next");
@@ -79,8 +79,14 @@ public class OthelloView implements Observer {
 		grid.setPadding(new Insets(10, 50, 50, 50));
 		grid.setVgap(2);
 		grid.setHgap(2);
+		this.init_chessboard();
+		this.pane.setCenter(this.grid);
+	}
+
+	private void init_chessboard() {
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
+				this.grid.getChildren().remove(this.getNode(i, j, grid));
 				if ((i == 3 && j == 3) || (i == 4 && j == 4)) {
 					grid.add(button_image(OthelloBoard.P1), j, i);
 				} else if ((i == 3 && j == 4) || (i == 4 && j == 3)) {
@@ -89,12 +95,7 @@ public class OthelloView implements Observer {
 					Button x = button_image(OthelloBoard.EMPTY);
 					grid.add(x, j, i);
 					x.setOnAction(controller);
-				}
-			}
-		}
-		this.pane.setCenter(this.grid);
-
-	}
+				}}}}
 
 	private MenuBar set_menu() {
 		MenuBar menuBar = new MenuBar();
@@ -116,11 +117,8 @@ public class OthelloView implements Observer {
 	private Node getNode(int row, int column, GridPane gridPane) {
 		for (Node node : gridPane.getChildren()) {
 			if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-				return node;
-			}
-		}
-		return null;
-	}
+				return node;}}
+		return null;}
 
 	private Button button_image(char token) {
 		Button button = new Button("");
@@ -129,29 +127,36 @@ public class OthelloView implements Observer {
 			ImageView image = (token == OthelloBoard.P1) ? new ImageView(black) : new ImageView(white);
 			image.setFitHeight(30);
 			image.setFitWidth(30);
-			button.setGraphic(image);
-		}
-		return button;
-	}
+			button.setGraphic(image);}
+		return button;}
 
-	@Override
-	public void update(Observable o) {
-		if (controller2.hint_move != null) {
-			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
-		};
+	private void update_label(Observable o) {
 		Othello othello = (Othello) o;
-		System.out.println(othello.getCount('X'));
 		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
 		this.labelcountX.setText("X : " + String.valueOf(othello.getCount('X')));
 		this.labelcountO.setText("O : " + String.valueOf(othello.getCount('O')));
 		if (othello.isGameOver()) {
-			this.game_status.setText("The game is over and winner is " + othello.getWinner());
-		}
-		for (int row = 0; row < Othello.DIMENSION; row++) {
-			for (int col = 0; col < Othello.DIMENSION; col++) {
-				if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
-					this.grid.add(button_image(othello.getToken(row, col)), col, row);
+			this.game_status.setText("The game is over and winner is " + othello.getWinner());}}
+
+	@Override
+	public void update(Observable o) {
+
+		if (controller2.hint_move != null) {
+			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
+		if (this.controller2.restart == true) {
+			this.init_chessboard();
+			this.update_label(o);
+			this.controller2.restart = false;
+		} else {
+			Othello othello = (Othello) o;
+			this.update_label(o);
+			for (int row = 0; row < Othello.DIMENSION; row++) {
+				for (int col = 0; col < Othello.DIMENSION; col++) {
+					if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
+						this.grid.getChildren().remove(this.getNode(row, col, grid));
+						this.grid.add(button_image(othello.getToken(row, col)), col, row);
+					}
 				}
 			}
 		}

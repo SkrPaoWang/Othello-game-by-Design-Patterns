@@ -10,9 +10,11 @@ import javafx.scene.control.MenuItem;
 
 public class MenuController implements EventHandler<ActionEvent> {
 	private Othello othello;
-    public Move hint_move; boolean restart = false;
+    public Move hint_move;
+    public boolean restart;
 	public MenuController(Othello othello) {
 		this.othello = othello;
+		this.restart = false;
 	}
 
 	public void handle(ActionEvent event) {
@@ -27,8 +29,9 @@ public class MenuController implements EventHandler<ActionEvent> {
 			this.hint_move= random.getMove();
 			this.othello.notifyObservers();
 		}else {
-			this.othello.restart_game();
 			this.restart = true;
+			this.othello.restart_game();
+			
 			this.hint_move = null;
 		}
 
