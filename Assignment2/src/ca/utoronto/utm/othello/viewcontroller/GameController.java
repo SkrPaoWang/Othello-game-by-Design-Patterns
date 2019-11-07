@@ -22,6 +22,7 @@ public class GameController implements EventHandler<ActionEvent> {
 		if (this.robot == "Human") {
 			Integer colIndex = GridPane.getColumnIndex(source);
 			Integer rowIndex = GridPane.getRowIndex(source);
+			
 			Move move = new Move(rowIndex, colIndex);
 			this.othello.make_chage(move.getRow(), move.getCol());
 		} else if (this.robot == "Greedy") {
