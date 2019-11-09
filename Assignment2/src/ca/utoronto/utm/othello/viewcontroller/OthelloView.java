@@ -4,6 +4,9 @@ import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -12,10 +15,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 
 public class OthelloView implements Observer {
 	private Label labelwhoturns;
@@ -31,7 +36,10 @@ public class OthelloView implements Observer {
 	private Image white = new Image("file:white.png");
 	public BorderPane pane;
 	private GridPane grid;
-
+	public static Label tPlayer1;
+	public static Label tplayer2;
+	public Timeline timer1;
+	public Timeline timer2;
 	public OthelloView(GameController controller, MenuController controller2) {
 		this.controller = controller;
 		this.controller2 = controller2;
@@ -76,12 +84,29 @@ public class OthelloView implements Observer {
 		this.grid.add(game_status, 9, 4);
 		this.grid.add(P1, 9, 5);
 		this.grid.add(P2, 9, 6);
+		TextField tPlayer1 = new TextField("Time for P1:");
+		TextField tPlayer2 = new TextField("Time for P2:");
+		Timeline timer1 = new Timeline(new KeyFrame(Duration.millis(1500), 
+				new TimerController("Time for player1",tPlayer1)));
+
+		Timeline timer2 = new Timeline(new KeyFrame(Duration.millis(900), 
+				new TimerController("Time for player2",tPlayer2)));
+
+		timer1.setCycleCount(Animation.INDEFINITE);
+
+		timer2.setCycleCount(Animation.INDEFINITE);
+		timer1.play();
+		timer2.play();
+		this.grid.add(tPlayer1, 9, 10);
+		this.grid.add(tPlayer2, 9, 11);
 		grid.setPadding(new Insets(10, 50, 50, 50));
 		grid.setVgap(2);
 		grid.setHgap(2);
 		this.init_chessboard();
 		this.pane.setCenter(this.grid);
-	}
+		
+		}
+
 
 	private void init_chessboard() {
 		for (byte i = 0; i < 8; i++) {

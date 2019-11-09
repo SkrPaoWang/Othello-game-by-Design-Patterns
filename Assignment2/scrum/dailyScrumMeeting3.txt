@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: xuejiahe     email: xuejiahe20150707@gmail.com    utorid:   xuejiah2  
 
 Oct 17,2019
 	What I did yesterday:
@@ -88,42 +88,46 @@ Nov 2,2019
 	Obstacles I face: 
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: 1.071 is done
+	What I will do today: starts on 1.08
+	Obstacles I face: I need to access the model class, try to link the getmove() method in the game controller
+	class. There are some bug in the 1.07, sometimes the label will change to null. 
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:review for sta256
-	Obstacles I face:
+	What I did yesterday: Fix the bug in 1.07 and deal with the three different player (starts working on the 1.08)
+	What I will do today: Modify the gamecontroller file and add some variables before the constructor
+	the robot as opponent is added. 
+	Obstacles I face: The new controller is not attached to the game. Need to modify both the application file and the OthelloView file.
 
 Nov 5,2019
-	What I did yesterday:review for sta256
-	What I will do today:sta256 test
-	Obstacles I face:
+	What I did yesterday: stuck on the gamecontroller.
+	What I will do today: fix the constructor in OthelloView and the application initiation step. Try to finish 1.08 today.
+	Obstacles I face: The Greedy and Random still won't work, after taking first step as human, the game stopped. 
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:csc236 homework
-	Obstacles I face:
+	What I did yesterday: stuck on the gamecontroller.
+	What I will do today: Finished the game controller with still some minor bug on top of it: After making a move with human, change
+	the opponent to Othello and the game stops. If I click on the board again the game moves on with a different oppoenet. There is a also
+	the bug that the game automatically changed the oppoenent when there is no valid move for one of the players. 
+	Obstacles I face: The bug I stated above
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:review for phl245
-	Obstacles I face:phl245 test
+	What I did yesterday: Try to fix the repo that is messed up a long time ago
+	What I will do today: Went to Arnold to fix the repo.
+	Obstacles I face: waiting to for the repo 
 
 Nov 8,2019
-	What I did yesterday:review for phl245
-	What I will do today:debugging and merge my branch with master branch
-	Obstacles I face:
+	What I did yesterday: repo fixed
+	What I will do today: Work on the timer ( 1.09 ), get familiar with how to use timer in fx(Timeline)
+	Obstacles I face: Don't know where to start and put in the timer. Should there be a seperate class?
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:finish 1.09 and 1.091
-	Obstacles I face:solve the merge problem
+	What I did yesterday: Try to construct timer class. 
+	What I will do today: Try to work out 1.09
+	Obstacles I face: stuck on having trouble accessing the other class of the play() method of timeline.
 
 Nov 10,2019
-	What I did yesterday:
+	What I did yesterday:?
 	What I will do today:
 	Obstacles I face:
 
