@@ -1,5 +1,7 @@
 package ca.utoronto.utm.othello.model;
 import ca.utoronto.utm.util.*;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -22,6 +24,7 @@ public class Othello extends Observable{
 	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
+	public ArrayList<Move> moves = new ArrayList();
 
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -58,6 +61,7 @@ public class Othello extends Observable{
 			if(allowedMove!=OthelloBoard.BOTH)this.whosTurn=allowedMove;
 			this.numMoves++;
 			this.notifyObservers();
+			moves.add(new Move(row, col));
 			return true;
 		} else {
 			return false;

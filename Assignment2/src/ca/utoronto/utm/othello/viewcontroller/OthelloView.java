@@ -1,5 +1,8 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
+import java.util.ArrayList;
+
+import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
@@ -27,14 +30,16 @@ public class OthelloView implements Observer {
 	ChoiceBox<String> choicebox;
 	private GameController controller;
 	private MenuController controller2;
+	protected UndoController controller3;
 	private Image black = new Image("file:black.png");
 	private Image white = new Image("file:white.png");
 	public BorderPane pane;
 	private GridPane grid;
 
-	public OthelloView(GameController controller, MenuController controller2) {
+	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
 		this.controller = controller;
 		this.controller2 = controller2;
+		this.controller3 = controller3;
 		this.init_choicebox();
 		this.init_game_layout();
 	}
@@ -100,14 +105,17 @@ public class OthelloView implements Observer {
 	private MenuBar set_menu() {
 		MenuBar menuBar = new MenuBar();
 		Menu help = new Menu("Help");
-		Menu caonima = new Menu("wannima");
+		Menu regret = new Menu("regret");
 		Menu restart = new Menu("Restart");
-		menuBar.getMenus().addAll(help, caonima, restart);
+		menuBar.getMenus().addAll(help, regret, restart);
 		MenuItem greedy = new MenuItem("Greedy Hint");
 		MenuItem random = new MenuItem("Random Hint");
 		MenuItem restart_game = new MenuItem("Restart Game");
+		MenuItem undo = new MenuItem("Undo");
 		help.getItems().addAll(greedy, random);
 		restart.getItems().addAll(restart_game);
+		regret.getItems().addAll(undo);
+		undo.setOnAction(controller3);
 		greedy.setOnAction(this.controller2);
 		random.setOnAction(this.controller2);
 		restart_game.setOnAction(this.controller2);

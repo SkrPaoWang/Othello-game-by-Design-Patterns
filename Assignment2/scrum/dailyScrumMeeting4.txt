@@ -1,5 +1,5 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name:Yang Liu      email:alexander.liu@mail.utoronto.ca     utorid: liuya106  
 
 Oct 17,2019
 	What I did yesterday:
@@ -93,33 +93,33 @@ Nov 3,2019
 
 Nov 4,2019
 	What I did yesterday:
-	What I will do today:
+	What I will do today:review for sta256
 	Obstacles I face:
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:review for sta256
+	What I will do today:sta256 test
 	Obstacles I face:
 
 Nov 6,2019
 	What I did yesterday:
-	What I will do today:
+	What I will do today:csc236 homework
 	Obstacles I face:
 
 Nov 7,2019
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today:review for phl245
+	Obstacles I face:phl245 test
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:review for phl245
+	What I will do today:debugging and merge my branch with master branch
 	Obstacles I face:
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:merge my branch with master branch
+	What I will do today:US1.012
+	Obstacles I face:solve the problem caused by viewer code.
 
 Nov 10,2019
 	What I did yesterday:

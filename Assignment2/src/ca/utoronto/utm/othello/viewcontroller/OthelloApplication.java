@@ -31,10 +31,11 @@ public class OthelloApplication extends Application {
 		
 		GameController controller = new GameController(othello);
 		MenuController menu_control = new MenuController(othello);
+		UndoController controller3 = new UndoController(othello);
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		
-		OthelloView view = new OthelloView(controller,menu_control);
+		OthelloView view = new OthelloView(controller,menu_control, controller3);
 		// MODEL->VIEW hookup
 	
 		othello.attach(view);
