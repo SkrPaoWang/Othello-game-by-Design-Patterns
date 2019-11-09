@@ -48,6 +48,7 @@ public class OthelloApplication extends Application {
 		first_page.x1.setOnAction(e -> stage.setScene(scene2));
 		stage.setTitle("Othello");
 		stage.setScene(scene1);
+		
 
 		// LAUNCH THE GUI
 		stage.show();
