@@ -2,11 +2,13 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import java.util.ArrayList;
 
+
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -19,6 +21,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 
 public class OthelloView implements Observer {
 	private Label labelwhoturns;
@@ -35,6 +40,8 @@ public class OthelloView implements Observer {
 	private Image white = new Image("file:white.png");
 	public BorderPane pane;
 	private GridPane grid;
+	//
+	protected  Label timerDisplay;
 
 	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
 		this.controller = controller;
@@ -42,6 +49,8 @@ public class OthelloView implements Observer {
 		this.controller3 = controller3;
 		this.init_choicebox();
 		this.init_game_layout();
+		
+		
 	}
 
 	private void init_choicebox() {
@@ -73,6 +82,11 @@ public class OthelloView implements Observer {
 		this.game_status = new Label("Game in Progress");
 		this.P1 = new Label("P1:Human");
 		this.P2 = new Label("P2:Human");
+		//
+		this.timerDisplay = new Label("Timer: ");
+		
+		
+		
 		this.grid = new GridPane();
 		this.grid.add(choicebox, 9, 0);
 		this.grid.add(labelwhoturns, 9, 1);
@@ -81,6 +95,10 @@ public class OthelloView implements Observer {
 		this.grid.add(game_status, 9, 4);
 		this.grid.add(P1, 9, 5);
 		this.grid.add(P2, 9, 6);
+		//
+		this.grid.add(timerDisplay, 9, 7);
+		//
+		
 		grid.setPadding(new Insets(10, 50, 50, 50));
 		grid.setVgap(2);
 		grid.setHgap(2);
@@ -89,6 +107,7 @@ public class OthelloView implements Observer {
 	}
 
 	private void init_chessboard() {
+		
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
 				this.grid.getChildren().remove(this.getNode(i, j, grid));

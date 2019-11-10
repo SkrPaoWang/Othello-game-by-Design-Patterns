@@ -1,9 +1,13 @@
 
 package ca.utoronto.utm.othello.viewcontroller;
 import ca.utoronto.utm.othello.model.*;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class OthelloApplication extends Application {
 
@@ -29,6 +33,7 @@ public class OthelloApplication extends Application {
 		// CONTROLLER
 		// CONTROLLER->MODEL hookup
 		
+	
 		GameController controller = new GameController(othello);
 		MenuController menu_control = new MenuController(othello);
 		UndoController controller3 = new UndoController(othello);
@@ -36,16 +41,24 @@ public class OthelloApplication extends Application {
 		// VIEW->CONTROLLER hookup
 		
 		OthelloView view = new OthelloView(controller,menu_control, controller3);
+		
+		
 		// MODEL->VIEW hookup
 	
 		othello.attach(view);
         
+		// Set Timer
+		TimerController timerController = new TimerController ("Timer", view.timerDisplay);
+		Timeline timer = new Timeline(new KeyFrame(Duration.millis(1000), timerController));
 		
 		// SCENE
-		FirstPage first_page = new FirstPage();
-		Scene scene1 = new Scene(first_page.pane);
+		FirstPage firstPage = new FirstPage();
+		Scene scene1 = new Scene(firstPage.pane);
 		Scene scene2 = new Scene(view.pane,500,500);
-		first_page.x1.setOnAction(e -> stage.setScene(scene2));
+		// Set timer
+		
+		FirstPageController fpController = new FirstPageController(stage, scene2, timer);
+		firstPage.x1.setOnAction(fpController);
 		stage.setTitle("Othello");
 		stage.setScene(scene1);
 		
