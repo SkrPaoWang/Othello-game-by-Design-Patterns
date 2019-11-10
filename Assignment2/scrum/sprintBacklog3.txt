@@ -45,7 +45,19 @@ on the board at all times.
 
 3) As in 2, but a random hint
 ...
-
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.08 : UTORID :xuejiah2 STATUS : Completed
+NAME     : Opponent Chooser Implementation
+OWNER    : Xue Jiahe, Linfeng Zhou
+PRIORITY : (1,2,3)
+ESTIMATE : 2 days  ACTUAL : 3 days 
+ISSUE    : An extension to Opponent Chooser, we implement the users choice
+of opponent, so the Human can actually play the select opponent. Reminder:
+the user should be able to switch opponents at any time during game play.
+THe current game continues with the new opponent.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.11 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
