@@ -118,7 +118,7 @@ Nov 8,2019
 
 Nov 9,2019
 	What I did yesterday:merge my branch with master branch
-	What I will do today:US1.012
+	What I will do today:US1.12
 	Obstacles I face:solve the problem caused by viewer code.
 
 Nov 10,2019
