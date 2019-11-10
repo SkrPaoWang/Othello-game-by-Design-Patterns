@@ -22,22 +22,22 @@ Oct 20,2019
 	Obstacles I face:
 
 Oct 21,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: 
+	What I will do today:  Try to understand the git branch but can't figure it out..
+	Obstacles I face:   The understanding issue
 
 Oct 22,2019
-	What I did yesterday:  
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Try to understand the git branch but can't figure it out..
+	What I will do today: Finish UserStory 1.01 in my local
+	Obstacles I face: no issue
 
 Oct 23,2019
-	What I did yesterday:  //
+	What I did yesterday:  UserStory 1.01
 	What I will do today:  understand the git branch and merge and added committed and pushed members.txt. 
 	Obstacles I face:  no
 
 Oct 24,2019
-	What I did yesterday:  understand the git branch and merge
+	What I did yesterday:  understand the git branch and merge and added committed and pushed members.txt. 
 	What I will do today: Finish checking MVC and Othello can run in my machine
 	Obstacles I face:  some issues about jdk 1.80, but fix it successully
 
@@ -88,41 +88,41 @@ Nov 2,2019
 
 Nov 3,2019
 	What I did yesterday: Work with teammates for user story 1.08.
-	What I will do today:   
-	Obstacles I face:
+	What I will do today:   Try to find the optimail solution for 1.08
+	Obstacles I face: The code is too long for 1.08
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Try to find the optimail solution for 1.08
+	What I will do today:  Finish UserStory1.10
+	Obstacles I face:  No 
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Finish UserStory1.10
+	What I will do today:    Finish UserStory1.11
+	Obstacles I face: A small issue that makes me debug for one hour
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish UserStory1.11
+	What I will do today:   Write a code report to my teammates
+	Obstacles I face:    No
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Write a code report to my teammates
+	What I will do today:   Give advice for teeamate that is doing 1.09
+	Obstacles I face:   Hard to give good advice
 
 Nov 8,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Give advice for teeamate that is doing 1.09
+	What I will do today:   Still thinking about how to make 1.08 code shorter.
+	Obstacles I face: I still didn't figure it out.
 
 Nov 9,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Still thinking about how to make 1.08 code shorter.
+	What I will do today:   Have a rest, it is Saturday, and I have worked for more than 10 days.
+	Obstacles I face:  Pretty good rest.
 
 Nov 10,2019
-	What I did yesterday:
+	What I did yesterday: Rest
 	What I will do today:
 	Obstacles I face:
 
@@ -218,5 +218,3 @@ Nov 28,2019
 
 Nov 29,2019
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
