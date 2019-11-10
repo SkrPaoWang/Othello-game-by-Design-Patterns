@@ -26,11 +26,11 @@ For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.10 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.10 : UTORID : zhouli32 : Completed
 NAME     : AI Hint
-OWNER    : 
+OWNER    : Linfeng Zhou
 PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+ESTIMATE : 2 days    ACTUAL :  2 days
 ISSUE    : When the user is playing, the current mover can select a gui
 component (click a button etc) and a hint will display. For this user story
 just display the (row, col) of the hint.
@@ -60,9 +60,9 @@ THe current game continues with the new opponent.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.11 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.11 : UTORID : xuwencai : NotStarted Completed
 NAME     : Restart
-OWNER    : 
+OWNER    : XuWencai
 PRIORITY : (1,2,3)
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
 ISSUE    : When a user is playing, they see a button etc. which allows them

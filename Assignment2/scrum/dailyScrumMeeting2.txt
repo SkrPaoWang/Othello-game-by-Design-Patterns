@@ -89,38 +89,37 @@ Nov 2,2019
 	my teammate helped figued out that I should the png file under directory bin.
 
 Nov 3,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:US.1.06
+	What I will do today:US.1.08 and US 1.10
 	Obstacles I face:
 
 Nov 4,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:US.1.10
+	What I will do today:review for sta256
 	Obstacles I face:
 
 Nov 5,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:review for sta256
+	What I will do today:sta256 test
 	Obstacles I face:
 
 Nov 6,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:review for sta256
+	What I will do today:csc236 a3
 	Obstacles I face:
 
 Nov 7,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:csc236 a3
+	What I will do today:review for phl245
+	Obstacles I face:phl245 test
 
 Nov 8,2019
-	What I did yesterday:
+	What I did yesterday:review for phl245
 	What I will do today:
-	Obstacles I face:
 
 Nov 9,2019
 	What I did yesterday:
-	What I will do today:
+	What I will do today:get timer working
 	Obstacles I face:
 
 Nov 10,2019
