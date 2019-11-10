@@ -170,12 +170,12 @@ public class OthelloView implements Observer {
 
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
-		if (this.controller2.restart == true) {
-			this.init_chessboard();
-			this.update_label(o);
-			this.controller2.restart = false;
-		} else {
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");}
+//		if (this.controller2.restart == true) {
+//			this.init_chessboard();
+//			this.update_label(o);
+//			this.controller2.restart = false;}
+		else {
 			Othello othello = (Othello) o;
 			this.update_label(o);
 			for (int row = 0; row < Othello.DIMENSION; row++) {
@@ -183,6 +183,12 @@ public class OthelloView implements Observer {
 					if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						this.grid.add(button_image(othello.getToken(row, col)), col, row);
+					}else {
+						this.grid.getChildren().remove(this.getNode(col, row, grid));
+						Button button = button_image(OthelloBoard.EMPTY);
+						button.setOnAction(controller);
+						this.grid.add(button, row, col);
+						
 					}
 					
 				}

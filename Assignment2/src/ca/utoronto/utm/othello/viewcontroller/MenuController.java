@@ -27,9 +27,9 @@ public class MenuController implements EventHandler<ActionEvent> {
 		}else if  (item.getText() == "Random Hint"){
 			PlayerRandom random = new PlayerRandom(othello, this.othello.getWhosTurn());
 			this.hint_move= random.getMove();
-			this.othello.notifyObservers();
-		}else {
-			this.restart = true;
+			this.othello.notifyObservers();}
+		else {
+//			this.restart = true;
 			this.othello.restart_game();
 			
 			this.hint_move = null;

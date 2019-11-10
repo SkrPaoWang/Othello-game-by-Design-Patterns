@@ -6,12 +6,12 @@
 # Sprint 4 Backlog UserStories go below
 
 --------------------------------------------------------------------------
-TYPE     : BUG 1.09 : UTORID :zhouli32 STATUS : In Progress
+TYPE     : BUG 1.09 : UTORID :xuejiah2,zhouli32 STATUS : Completed
 NAME     : Othello Timer Fixed Time(restart problemm)
-OWNER    : Linfeng Zhou, Jiahe Xue
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
-ISSUE    : When users play, they see a chess like timer for the othello game. 
-For this user story, the time is fixed to 5 minutes/player.
-After a player makes a move the timer switches off for the player and on for the next mover.
+OWNER    : Jiahe Xue, Linfeng Zhou, 
+PRIORITY : 1
+ESTIMATE : 4 hours    ACTUAL :  3 hours
+ISSUE    : 1. Restart not functioning properly (When the token on the othello board is EMPTY, 
+after using the restart function, the token on the old view will be left on the new one.) 
+		   2. By fixing this, the undo function is now also functioning and the timer can call restart function now. 
 --------------------------------------------------------------------------
