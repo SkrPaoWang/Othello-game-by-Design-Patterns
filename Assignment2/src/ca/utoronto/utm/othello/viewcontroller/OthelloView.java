@@ -184,6 +184,7 @@ public class OthelloView implements Observer {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						this.grid.add(button_image(othello.getToken(row, col)), col, row);
 					}
+					
 				}
 			}
 		}
