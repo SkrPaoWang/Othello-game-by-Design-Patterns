@@ -35,7 +35,7 @@ public class TimerController implements EventHandler<ActionEvent> {
 		}
 		seconds--;
 		
-		System.out.println(this.name + ":   " + minutes + ":" + seconds);
+//		System.out.println(this.name + ":   " + minutes + ":" + seconds);
 		this.label.setText(this.name + ":   " + minutes + ":" + seconds);
 	}
 

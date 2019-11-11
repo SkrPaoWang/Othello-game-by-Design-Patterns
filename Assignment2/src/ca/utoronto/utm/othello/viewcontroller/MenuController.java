@@ -29,7 +29,7 @@ public class MenuController implements EventHandler<ActionEvent> {
 			this.hint_move= random.getMove();
 			this.othello.notifyObservers();}
 		else {
-//			this.restart = true;
+			this.restart = true;
 			this.othello.restart_game();
 			
 			this.hint_move = null;
