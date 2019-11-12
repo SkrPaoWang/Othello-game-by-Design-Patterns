@@ -1,5 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
+import java.util.ArrayList;
+
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.PlayerGreedy;
@@ -31,7 +33,7 @@ public class MenuController implements EventHandler<ActionEvent> {
 		else {
 			this.restart = true;
 			this.othello.restart_game();
-			
+			this.othello.moves = new ArrayList<Move>();
 			this.hint_move = null;
 		}
 

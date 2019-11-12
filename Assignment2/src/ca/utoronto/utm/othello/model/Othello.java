@@ -118,7 +118,6 @@ public class Othello extends Observable{
 		this.numMoves = 0;
 		this.whosTurn = 'X';
 		this.notifyObservers();
-		this.moves = new ArrayList<Move>();
 	}
 
 
