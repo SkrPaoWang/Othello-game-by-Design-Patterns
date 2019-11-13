@@ -14,7 +14,6 @@ class UndoController implements EventHandler<ActionEvent>{
 
 	@Override
 	public void handle(ActionEvent event) {
-		// TODO Auto-generated method stub
 		if(!(o.moves.size()==0)) {	
 			o.moves.remove(o.moves.size()-1);
 			o.restart_game();
@@ -23,8 +22,6 @@ class UndoController implements EventHandler<ActionEvent>{
 			for (Move m:temp) {
 				o.move(m.getRow(),m.getCol());
 			}
-			System.out.println(o.getBoardString());
 		}
 	}
-
 }

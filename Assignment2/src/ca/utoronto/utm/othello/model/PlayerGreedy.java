@@ -28,7 +28,7 @@ public class PlayerGreedy extends Player {
 	public Move getMove() {
 		Othello othelloCopy = othello.copy();
 		Move bestMove=new Move(0,0);
-		int bestMoveCount=othelloCopy.getCount(this.player);;
+		int bestMoveCount=othelloCopy.getCount(this.player);
 		for(int row=0;row<Othello.DIMENSION;row++) {
 			for(int col=0;col<Othello.DIMENSION;col++) {
 				othelloCopy = othello.copy();
