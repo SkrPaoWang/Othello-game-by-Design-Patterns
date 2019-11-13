@@ -42,8 +42,8 @@ public class OthelloApplication extends Application {
 		
 		OthelloView view = new OthelloView(controller,menu_control, controller3);
 		// Set Timer
-		TimerController timerController1 = new TimerController ("Timer1", view.timerDisplay1, othello);
-		TimerController timerController2 = new TimerController ("Timer2", view.timerDisplay2, othello);
+		TimerController timerController1 = new TimerController (view.timerDisplay1, othello);
+		TimerController timerController2 = new TimerController (view.timerDisplay2, othello);
 		Timeline timer1 = new Timeline(new KeyFrame(Duration.millis(1000), timerController1));
 		Timeline timer2 = new Timeline(new KeyFrame(Duration.millis(1000), timerController2));
 		view.addTimer(timer1, timer2);

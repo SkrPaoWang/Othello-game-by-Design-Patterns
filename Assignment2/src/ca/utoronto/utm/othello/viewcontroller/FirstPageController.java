@@ -22,8 +22,7 @@ public class FirstPageController implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event) {
 		stage.setScene(scene);
-		timer.setCycleCount(Animation.INDEFINITE);
-		timer.play();
+	
 		
 	}
 	public Stage getStage() {

@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -41,9 +42,10 @@ public class OthelloView implements Observer {
 	public BorderPane pane;
 	private GridPane grid;
 	private Timeline timer1, timer2;
+	private Label timerLabel1, timerLabel2;
 	//
-	protected  Label timerDisplay1;
-	protected  Label timerDisplay2;
+	protected TextField timerDisplay1;
+	protected TextField timerDisplay2;
 	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
 		this.controller = controller;
 		this.controller2 = controller2;
@@ -90,8 +92,10 @@ public class OthelloView implements Observer {
 		this.P1 = new Label("P1:Human");
 		this.P2 = new Label("P2:Human");
 		//
-		this.timerDisplay1 = new Label("Timer1: ");
-		this.timerDisplay2 = new Label("Timer2: ");
+		this.timerLabel1 = new Label("Timer1:");
+		this.timerLabel2 = new Label("Timer2:");
+		this.timerDisplay1 = new TextField("minutes:seconds");
+		this.timerDisplay2 = new TextField("minutes:seconds");
 		
 		
 		this.grid = new GridPane();
@@ -103,8 +107,10 @@ public class OthelloView implements Observer {
 		this.grid.add(P1, 9, 5);
 		this.grid.add(P2, 9, 6);
 		//
-		this.grid.add(timerDisplay1, 9, 7);
-		this.grid.add(timerDisplay2, 9, 8);
+		this.grid.add(timerLabel1, 9, 7);
+		this.grid.add(timerDisplay1, 10, 7);
+		this.grid.add(timerLabel2, 9, 8);
+		this.grid.add(timerDisplay2, 10, 8);
 		//
 		
 		grid.setPadding(new Insets(10, 50, 50, 50));
