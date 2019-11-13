@@ -9,8 +9,8 @@ import javafx.scene.control.Label;
 
 public class TimerController implements EventHandler<ActionEvent> {
 
-	private int seconds = 10;
-	private int minutes = 0;
+	private int seconds = 0;
+	private int minutes = 5;
 	private String name;
 	private Label label;
 	private Othello game;
@@ -26,7 +26,6 @@ public class TimerController implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event) {
 		if (minutes == 0 && seconds == 0) {
 			game.restart_game();
-			
 		}
 		
 		if (seconds == 0) {

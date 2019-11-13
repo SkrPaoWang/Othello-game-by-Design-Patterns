@@ -32,12 +32,6 @@ public class FirstPageController implements EventHandler<ActionEvent> {
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
-	public Timeline getTimer() {
-		return timer;
-	}
-	public void setTimer(Timeline timer) {
-		this.timer = timer;
-	}
 	public FirstPage getFirstPage() {
 		return firstPage;
 	}

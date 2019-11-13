@@ -40,9 +40,10 @@ public class OthelloView implements Observer {
 	private Image white = new Image("file:white.png");
 	public BorderPane pane;
 	private GridPane grid;
+	private Timeline timer1, timer2;
 	//
-	protected  Label timerDisplay;
-
+	protected  Label timerDisplay1;
+	protected  Label timerDisplay2;
 	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
 		this.controller = controller;
 		this.controller2 = controller2;
@@ -51,6 +52,12 @@ public class OthelloView implements Observer {
 		this.init_game_layout();
 		
 		
+	}
+	public void addTimer(Timeline t1, Timeline t2) {
+		timer1 = t1;
+		timer2 = t2;
+		timer1.setCycleCount(Animation.INDEFINITE);
+		timer2.setCycleCount(Animation.INDEFINITE);
 	}
 
 	private void init_choicebox() {
@@ -83,8 +90,8 @@ public class OthelloView implements Observer {
 		this.P1 = new Label("P1:Human");
 		this.P2 = new Label("P2:Human");
 		//
-		this.timerDisplay = new Label("Timer: ");
-		
+		this.timerDisplay1 = new Label("Timer1: ");
+		this.timerDisplay2 = new Label("Timer2: ");
 		
 		
 		this.grid = new GridPane();
@@ -96,7 +103,8 @@ public class OthelloView implements Observer {
 		this.grid.add(P1, 9, 5);
 		this.grid.add(P2, 9, 6);
 		//
-		this.grid.add(timerDisplay, 9, 7);
+		this.grid.add(timerDisplay1, 9, 7);
+		this.grid.add(timerDisplay2, 9, 8);
 		//
 		
 		grid.setPadding(new Insets(10, 50, 50, 50));
@@ -159,7 +167,23 @@ public class OthelloView implements Observer {
 
 	private void update_label(Observable o) {
 		Othello othello = (Othello) o;
-		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
+		
+		if (this.labelwhoturns.getText().charAt(0) !=othello.getWhosTurn()){
+			this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
+			if (othello.getWhosTurn() == OthelloBoard.P2) {
+				timer1.pause();
+				timer2.play();
+				System.out.println("p1stop，p2 开始。。");
+			}
+			else if (othello.getWhosTurn() == OthelloBoard.P1) {
+				timer2.pause();
+				timer1.play();
+				System.out.println("p2stop，p1 开始。。");
+			}
+		}
+		
+		//this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
+		
 		this.labelcountX.setText("X : " + String.valueOf(othello.getCount('X')));
 		this.labelcountO.setText("O : " + String.valueOf(othello.getCount('O')));
 		if (othello.isGameOver()) {
@@ -167,7 +191,7 @@ public class OthelloView implements Observer {
 
 	@Override
 	public void update(Observable o) {
-
+		
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
 			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");}
