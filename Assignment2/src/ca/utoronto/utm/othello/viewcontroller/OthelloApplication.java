@@ -57,7 +57,7 @@ public class OthelloApplication extends Application {
 		Scene scene2 = new Scene(view.pane,500,500);
 		// Set timer
 		
-		FirstPageController fpController = new FirstPageController(othello,stage, scene2, timer,gamecontroller);
+		FirstPageController fpController = new FirstPageController(othello,stage, scene2, timer,gamecontroller,view);
 		firstPage.x1.setOnAction(fpController);
 		firstPage.x2.setOnAction(fpController);
 		firstPage.x3.setOnAction(fpController);

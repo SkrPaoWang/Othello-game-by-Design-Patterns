@@ -10,16 +10,17 @@ import ca.utoronto.utm.othello.model.PlayerRandom;
 
 public class OppenentFactory {
 
-	public static Player createPlayer(String product, Othello othello) {
+	public static Player createPlayer(String product, Othello othello, char c) {
 		switch (product) {
 		case "Greedy":
-			return new PlayerGreedy(othello, OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			return new PlayerGreedy(othello, c);
 		case "Random":
-			return new PlayerRandom(othello, OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			System.out.println(1);
+			return new PlayerRandom(othello, c);
 		case "Human":
-			return new PlayerHuman(othello,OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			return new PlayerHuman(othello, c);
 		case "Alpha":
-			return new PlayerAlpha(othello,OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			return new PlayerAlpha(othello, c);
 		}
 		return null;
 	}

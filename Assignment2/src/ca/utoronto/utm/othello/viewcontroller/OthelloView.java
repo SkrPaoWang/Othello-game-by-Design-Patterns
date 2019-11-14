@@ -29,8 +29,8 @@ public class OthelloView implements Observer {
 	Label labelcountX;
 	Label labelcountO;
 	private Label game_status;
-	private Label P1;
-	Label P2;
+	protected Label P1;
+	protected Label P2;
 	ChoiceBox<String> choicebox;
 	private GameController controller;
 	private MenuController controller2;
@@ -53,21 +53,27 @@ public class OthelloView implements Observer {
 
 	private void init_choicebox() {
 		this.choicebox = new ChoiceBox<>();
-		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Random");
-		this.choicebox.setValue("Human VS Human");
+		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Random", "Human VS Alpha",
+				"Change Game Mode");
+		this.choicebox.setValue("Change Game Mode");
 		this.choicebox.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue == "Human VS Human") {
 				this.P1.setText("P1: Human");
 				this.P1.setText("P2: Human");
 				this.controller.change_oppenent("Human");
 			} else if (newValue == "Human VS Greedy") {
-				this.P2.setText("P2: Greedy");
+				this.P2.setText("P2: Greedy");this.P1.setText("P1: Human");
 				this.controller.change_oppenent("Greedy");
+			} else if (newValue == "Human VS Alpha") {
+                this.P2.setText("P2: Alpha");this.P1.setText("P1: Human");
+                this.controller.change_oppenent("Alpha");
 			} else {
-				this.P2.setText("P2: Random");
+				this.P2.setText("P2: Random");this.P1.setText("P1: Human");
 				this.controller.change_oppenent("Random");
 			}
-			this.controller.oppenent_move();
+			if (this.controller.othello.getWhosTurn() == 'O') {
+				this.controller.oppenent_move();
+			}
 		});
 	}
 

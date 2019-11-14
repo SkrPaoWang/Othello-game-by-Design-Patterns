@@ -17,24 +17,28 @@ public class FirstPageController implements EventHandler<ActionEvent> {
 	private Scene scene;
 	private Othello othello;
 	private GameController gamecontroller;
-	public FirstPageController(Othello othello, Stage stage, Scene s, Timeline timer,GameController gamecontroller) {
+	private OthelloView view;
+	public FirstPageController(Othello othello, Stage stage, Scene s, Timeline timer,GameController gamecontroller,OthelloView view) {
 		this.setStage(stage);
 		this.timer = timer;
 		this.setFirstPage(firstPage);
 		this.scene = s;
 		this.othello = othello;
 		this.gamecontroller = gamecontroller;
+		this.view = view;
 		
 	}
 	@Override
 	public void handle(ActionEvent event) {
 		Button source = (Button) event.getSource();
 		if (source.getText() == "VS Greedy:") {
-			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Greedy", othello));
+			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Greedy", othello,'O'));
+			this.view.P2.setText("P2: Greedy");
 		}else if (source.getText() == "VS Random") {
-			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Random", othello));
+			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Random", othello,'O'));
+			this.view.P2.setText("P2: Random");
 		}else if (source.getText() == "VS Human") {
-			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Human", othello));
+			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Human", othello,'O'));
 		}
 		stage.setScene(scene);
 		timer.setCycleCount(Animation.INDEFINITE);
