@@ -50,3 +50,12 @@ ISSUE    : When users play, they see a chess like timer for the othello game.
 For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.14 : zhouli32 : STATUS : In Progress
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL :  ?
+ISSUE    : When a user is playing, they see the positions that they can
+move highlighted vs the positions they can't move.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
