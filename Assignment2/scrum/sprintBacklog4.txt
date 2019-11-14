@@ -31,3 +31,22 @@ PRIORITY : 1
 ESTIMATE : 3 hours    ACTUAL :  ?
 ISSUE    : 1. time keeps running after restart
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.09 : UTORID :zhouli32 STATUS : Completed
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL :  1 day
+ISSUE    : When users play, they see a chess like timer for the othello game. 
+For this user story, the time is fixed to 5 minutes/player.
+After a player makes a move the timer switches off for the player and on for the next mover.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.091 : UTORID :zhouli32 STATUS :Completed
+NAME     : Othello Timer User Specified Time
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 1  day   ACTUAL :  3 days
+ISSUE    : When users play, they see a chess like timer for the othello game. 
+For this user story, the user is allowed to specify the time for each user.
+After a player makes a move the timer switches off for the player and on for the next mover.
+--------------------------------------------------------------------------
