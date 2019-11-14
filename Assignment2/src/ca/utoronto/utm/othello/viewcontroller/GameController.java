@@ -3,6 +3,7 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.othello.model.Player;
 import ca.utoronto.utm.othello.model.PlayerGreedy;
 import ca.utoronto.utm.othello.model.PlayerHuman;
@@ -22,6 +23,7 @@ public class GameController implements EventHandler<ActionEvent> {
 	}
 
 	public void handle(ActionEvent event) {
+		
 		Button source = (Button) event.getSource();
 		Integer rowIndex = GridPane.getRowIndex(source);
 		Integer colIndex = GridPane.getColumnIndex(source);
@@ -30,8 +32,7 @@ public class GameController implements EventHandler<ActionEvent> {
 			this.othello.move(move.getRow(), move.getCol());
 		} else {
 			this.othello.move(move.getRow(), move.getCol());
-			Move move2 = this.opponent.getMove();
-			this.othello.move(move2.getRow(), move2.getCol());
+			this.oppenent_move();
 		}
 	}
 
@@ -41,8 +42,10 @@ public class GameController implements EventHandler<ActionEvent> {
 	}
 	
 	public void oppenent_move() {
+		System.out.println("othello: "+ othello.getWhosTurn());
+		System.out.println("ooopnent: "+ opponent.getToken());
 		if (othello.getWhosTurn() == this.opponent.getToken()) {
-			this.othello.mo
+			this.othello.move(opponent.getMove().getRow(),opponent.getMove().getCol());
 		}
 	}
 

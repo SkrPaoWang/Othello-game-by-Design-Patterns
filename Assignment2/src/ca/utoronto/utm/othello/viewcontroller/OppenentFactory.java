@@ -15,11 +15,11 @@ public class OppenentFactory {
 		case "Greedy":
 			return new PlayerGreedy(othello, OthelloBoard.otherPlayer(othello.getWhosTurn()));
 		case "Random":
-			return new PlayerRandom(othello,  OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			return new PlayerRandom(othello, OthelloBoard.otherPlayer(othello.getWhosTurn()));
 		case "Human":
-			return new PlayerHuman(othello,  OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			return new PlayerHuman(othello,OthelloBoard.otherPlayer(othello.getWhosTurn()));
 		case "Alpha":
-			return new PlayerAlpha(othello,  OthelloBoard.otherPlayer(othello.getWhosTurn()));
+			return new PlayerAlpha(othello,OthelloBoard.otherPlayer(othello.getWhosTurn()));
 		}
 		return null;
 	}
