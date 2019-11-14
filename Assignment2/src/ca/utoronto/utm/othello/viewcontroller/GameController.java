@@ -1,8 +1,12 @@
 
 package ca.utoronto.utm.othello.viewcontroller;
+
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
+import ca.utoronto.utm.othello.model.Player;
 import ca.utoronto.utm.othello.model.PlayerGreedy;
+import ca.utoronto.utm.othello.model.PlayerHuman;
+import ca.utoronto.utm.othello.model.PlayerOppenent;
 import ca.utoronto.utm.othello.model.PlayerRandom;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,7 +15,7 @@ import javafx.scene.layout.GridPane;
 
 public class GameController implements EventHandler<ActionEvent> {
 	private Othello othello;
-	public String robot = "Human";
+	public PlayerOppenent opponent = null;
 
 	public GameController(Othello othello) {
 		this.othello = othello;
@@ -19,37 +23,27 @@ public class GameController implements EventHandler<ActionEvent> {
 
 	public void handle(ActionEvent event) {
 		Button source = (Button) event.getSource();
-		if (this.robot == "Human") {
-			Integer colIndex = GridPane.getColumnIndex(source);
-			Integer rowIndex = GridPane.getRowIndex(source);
-			Move move = new Move(rowIndex, colIndex);
+		Integer rowIndex = GridPane.getRowIndex(source);
+		Integer colIndex = GridPane.getColumnIndex(source);
+		Move move = new Move(rowIndex, colIndex);
+		if ((this.opponent.oppenent_strategy instanceof PlayerHuman)) {
 			this.othello.move(move.getRow(), move.getCol());
-		} else if (this.robot == "Greedy") {
-			Integer colIndex = GridPane.getColumnIndex(source);
-			Integer rowIndex = GridPane.getRowIndex(source);
-			Move move1 = new Move(rowIndex, colIndex);
-			System.out.println(move1.toString());
-			boolean x = this.othello.move(move1.getRow(), move1.getCol());
-			if (x) {
-				PlayerGreedy greedy = new PlayerGreedy(othello, this.othello.getWhosTurn());
-				Move move2 = greedy.getMove();
-				this.othello.move(move2.getRow(), move2.getCol());
-			}
-		} else if (this.robot == "Random") {
-			Integer colIndex = GridPane.getColumnIndex(source);
-			Integer rowIndex = GridPane.getRowIndex(source);
-			Move move3 = new Move(rowIndex, colIndex);
-			boolean y = this.othello.move(move3.getRow(), move3.getCol());
-			if (y) {
-				PlayerRandom random = new PlayerRandom(othello, this.othello.getWhosTurn());
-				Move move4 = random.getMove();
-				this.othello.move(move4.getRow(), move4.getCol());
-			}
+		} else {
+			this.othello.move(move.getRow(), move.getCol());
+			Move move2 = this.opponent.getMove();
+			this.othello.move(move2.getRow(), move2.getCol());
+		}
+	}
+
+	
+	public void change_oppenent(String s) {
+		this.opponent.setOpponent(OppenentFactory.createPlayer(s, othello));
+	}
+	
+	public void oppenent_move() {
+		if (othello.getWhosTurn() == this.opponent.getToken()) {
+			this.othello.mo
 		}
 	}
 
 }
-
-
-
-

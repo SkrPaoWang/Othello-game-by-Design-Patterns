@@ -2,7 +2,6 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import java.util.ArrayList;
 
-
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
@@ -41,7 +40,7 @@ public class OthelloView implements Observer {
 	public BorderPane pane;
 	private GridPane grid;
 	//
-	protected  Label timerDisplay;
+	protected Label timerDisplay;
 
 	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
 		this.controller = controller;
@@ -49,8 +48,7 @@ public class OthelloView implements Observer {
 		this.controller3 = controller3;
 		this.init_choicebox();
 		this.init_game_layout();
-		
-		
+
 	}
 
 	private void init_choicebox() {
@@ -61,15 +59,15 @@ public class OthelloView implements Observer {
 			if (newValue == "Human VS Human") {
 				this.P1.setText("P1: Human");
 				this.P1.setText("P2: Human");
-				this.controller.robot = "Human";
-
+				this.controller.change_oppenent("Human");
 			} else if (newValue == "Human VS Greedy") {
 				this.P2.setText("P2: Greedy");
-				this.controller.robot = "Greedy";
+				this.controller.change_oppenent("Greedy");
 			} else {
 				this.P2.setText("P2: Random");
-				this.controller.robot = "Random";
+				this.controller.change_oppenent("Random");
 			}
+			this.controller.oppenent_move();
 		});
 	}
 
@@ -84,9 +82,6 @@ public class OthelloView implements Observer {
 		this.P2 = new Label("P2:Human");
 		//
 		this.timerDisplay = new Label("Timer: ");
-		
-		
-		
 		this.grid = new GridPane();
 		this.grid.add(choicebox, 9, 0);
 		this.grid.add(labelwhoturns, 9, 1);
@@ -98,7 +93,7 @@ public class OthelloView implements Observer {
 		//
 		this.grid.add(timerDisplay, 9, 7);
 		//
-		
+
 		grid.setPadding(new Insets(10, 50, 50, 50));
 		grid.setVgap(2);
 		grid.setHgap(2);
@@ -107,7 +102,7 @@ public class OthelloView implements Observer {
 	}
 
 	private void init_chessboard() {
-		
+
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
 				this.grid.getChildren().remove(this.getNode(i, j, grid));
@@ -119,7 +114,10 @@ public class OthelloView implements Observer {
 					Button x = button_image(OthelloBoard.EMPTY);
 					grid.add(x, j, i);
 					x.setOnAction(controller);
-				}}}}
+				}
+			}
+		}
+	}
 
 	private MenuBar set_menu() {
 		MenuBar menuBar = new MenuBar();
@@ -144,8 +142,11 @@ public class OthelloView implements Observer {
 	private Node getNode(int row, int column, GridPane gridPane) {
 		for (Node node : gridPane.getChildren()) {
 			if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
-				return node;}}
-		return null;}
+				return node;
+			}
+		}
+		return null;
+	}
 
 	private Button button_image(char token) {
 		Button button = new Button("");
@@ -154,8 +155,10 @@ public class OthelloView implements Observer {
 			ImageView image = (token == OthelloBoard.P1) ? new ImageView(black) : new ImageView(white);
 			image.setFitHeight(30);
 			image.setFitWidth(30);
-			button.setGraphic(image);}
-		return button;}
+			button.setGraphic(image);
+		}
+		return button;
+	}
 
 	private void update_label(Observable o) {
 		Othello othello = (Othello) o;
@@ -163,19 +166,22 @@ public class OthelloView implements Observer {
 		this.labelcountX.setText("X : " + String.valueOf(othello.getCount('X')));
 		this.labelcountO.setText("O : " + String.valueOf(othello.getCount('O')));
 		if (othello.isGameOver()) {
-			this.game_status.setText("The game is over and winner is " + othello.getWinner());}}
+			this.game_status.setText("The game is over and winner is " + othello.getWinner());
+		}
+	}
 
 	@Override
 	public void update(Observable o) {
 
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");}
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
+		}
 		if (this.controller2.restart == true) {
 			this.init_chessboard();
 			this.update_label(o);
-			this.controller2.restart = false;}
-		else {
+			this.controller2.restart = false;
+		} else {
 			Othello othello = (Othello) o;
 			this.update_label(o);
 			for (int row = 0; row < Othello.DIMENSION; row++) {
@@ -183,7 +189,7 @@ public class OthelloView implements Observer {
 					if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						this.grid.add(button_image(othello.getToken(row, col)), col, row);
-					}else {
+					} else {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						Button button = button_image(OthelloBoard.EMPTY);
 						button.setOnAction(controller);
@@ -194,4 +200,3 @@ public class OthelloView implements Observer {
 		}
 	}
 }
-

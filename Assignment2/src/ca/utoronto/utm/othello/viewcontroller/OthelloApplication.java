@@ -34,13 +34,13 @@ public class OthelloApplication extends Application {
 		// CONTROLLER->MODEL hookup
 		
 	
-		GameController controller = new GameController(othello);
+		GameController gamecontroller = new GameController(othello);
 		MenuController menu_control = new MenuController(othello);
 		UndoController controller3 = new UndoController(othello);
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		
-		OthelloView view = new OthelloView(controller,menu_control, controller3);
+		OthelloView view = new OthelloView(gamecontroller,menu_control, controller3);
 		
 		
 		// MODEL->VIEW hookup
@@ -57,8 +57,10 @@ public class OthelloApplication extends Application {
 		Scene scene2 = new Scene(view.pane,500,500);
 		// Set timer
 		
-		FirstPageController fpController = new FirstPageController(stage, scene2, timer);
+		FirstPageController fpController = new FirstPageController(othello,stage, scene2, timer,gamecontroller);
 		firstPage.x1.setOnAction(fpController);
+		firstPage.x2.setOnAction(fpController);
+		firstPage.x3.setOnAction(fpController);
 		stage.setTitle("Othello");
 		stage.setScene(scene1);
 		
