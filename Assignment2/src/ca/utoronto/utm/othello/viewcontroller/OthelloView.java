@@ -2,11 +2,13 @@ package ca.utoronto.utm.othello.viewcontroller;
 
 import java.util.ArrayList;
 
+
 import ca.utoronto.utm.othello.model.Move;
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.OthelloBoard;
 import ca.utoronto.utm.util.Observable;
 import ca.utoronto.utm.util.Observer;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -15,10 +17,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 
 public class OthelloView implements Observer {
 	private Label labelwhoturns;
@@ -35,13 +41,25 @@ public class OthelloView implements Observer {
 	private Image white = new Image("file:white.png");
 	public BorderPane pane;
 	private GridPane grid;
-
+	private Timeline timer1, timer2;
+	private Label timerLabel1, timerLabel2;
+	//
+	protected TextField timerDisplay1;
+	protected TextField timerDisplay2;
 	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
 		this.controller = controller;
 		this.controller2 = controller2;
 		this.controller3 = controller3;
 		this.init_choicebox();
 		this.init_game_layout();
+		
+		
+	}
+	public void addTimer(Timeline t1, Timeline t2) {
+		timer1 = t1;
+		timer2 = t2;
+		timer1.setCycleCount(Animation.INDEFINITE);
+		timer2.setCycleCount(Animation.INDEFINITE);
 	}
 
 	private void init_choicebox() {
@@ -73,6 +91,13 @@ public class OthelloView implements Observer {
 		this.game_status = new Label("Game in Progress");
 		this.P1 = new Label("P1:Human");
 		this.P2 = new Label("P2:Human");
+		//
+		this.timerLabel1 = new Label("Timer1:");
+		this.timerLabel2 = new Label("Timer2:");
+		this.timerDisplay1 = new TextField("minutes:seconds");
+		this.timerDisplay2 = new TextField("minutes:seconds");
+		
+		
 		this.grid = new GridPane();
 		this.grid.add(choicebox, 9, 0);
 		this.grid.add(labelwhoturns, 9, 1);
@@ -81,6 +106,13 @@ public class OthelloView implements Observer {
 		this.grid.add(game_status, 9, 4);
 		this.grid.add(P1, 9, 5);
 		this.grid.add(P2, 9, 6);
+		//
+		this.grid.add(timerLabel1, 9, 7);
+		this.grid.add(timerDisplay1, 10, 7);
+		this.grid.add(timerLabel2, 9, 8);
+		this.grid.add(timerDisplay2, 10, 8);
+		//
+		
 		grid.setPadding(new Insets(10, 50, 50, 50));
 		grid.setVgap(2);
 		grid.setHgap(2);
@@ -89,6 +121,7 @@ public class OthelloView implements Observer {
 	}
 
 	private void init_chessboard() {
+		
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
 				this.grid.getChildren().remove(this.getNode(i, j, grid));
@@ -140,7 +173,23 @@ public class OthelloView implements Observer {
 
 	private void update_label(Observable o) {
 		Othello othello = (Othello) o;
-		this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
+		
+		if (this.labelwhoturns.getText().charAt(0) !=othello.getWhosTurn()){
+			this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
+			if (othello.getWhosTurn() == OthelloBoard.P2) {
+				timer1.pause();
+				timer2.play();
+				System.out.println("p1stop，p2 开始。。");
+			}
+			else if (othello.getWhosTurn() == OthelloBoard.P1) {
+				timer2.pause();
+				timer1.play();
+				System.out.println("p2stop，p1 开始。。");
+			}
+		}
+		
+		//this.labelwhoturns.setText(othello.getWhosTurn() + " moves Next");
+		
 		this.labelcountX.setText("X : " + String.valueOf(othello.getCount('X')));
 		this.labelcountO.setText("O : " + String.valueOf(othello.getCount('O')));
 		if (othello.isGameOver()) {
@@ -148,15 +197,15 @@ public class OthelloView implements Observer {
 
 	@Override
 	public void update(Observable o) {
-
+		
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");};
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");}
 		if (this.controller2.restart == true) {
 			this.init_chessboard();
 			this.update_label(o);
-			this.controller2.restart = false;
-		} else {
+			this.controller2.restart = false;}
+		else {
 			Othello othello = (Othello) o;
 			this.update_label(o);
 			for (int row = 0; row < Othello.DIMENSION; row++) {
@@ -164,6 +213,11 @@ public class OthelloView implements Observer {
 					if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						this.grid.add(button_image(othello.getToken(row, col)), col, row);
+					}else {
+						this.grid.getChildren().remove(this.getNode(row, col, grid));
+						Button button = button_image(OthelloBoard.EMPTY);
+						button.setOnAction(controller);
+						this.grid.add(button, col, row);
 					}
 				}
 			}

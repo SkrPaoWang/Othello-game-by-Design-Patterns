@@ -1,6 +1,9 @@
 
 package ca.utoronto.utm.othello.viewcontroller;
+
 import ca.utoronto.utm.othello.model.Move;
+
+
 import ca.utoronto.utm.othello.model.Othello;
 import ca.utoronto.utm.othello.model.PlayerGreedy;
 import ca.utoronto.utm.othello.model.PlayerRandom;
@@ -18,6 +21,7 @@ public class GameController implements EventHandler<ActionEvent> {
 	}
 
 	public void handle(ActionEvent event) {
+
 		Button source = (Button) event.getSource();
 		if (this.robot == "Human") {
 			Integer colIndex = GridPane.getColumnIndex(source);
@@ -49,7 +53,3 @@ public class GameController implements EventHandler<ActionEvent> {
 	}
 
 }
-
-
-
-

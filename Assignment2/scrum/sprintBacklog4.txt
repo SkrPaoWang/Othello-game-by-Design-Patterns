@@ -5,3 +5,13 @@
 # Sprint 4 Nov 10-Nov 16, 2019
 # Sprint 4 Backlog UserStories go below
 
+--------------------------------------------------------------------------
+TYPE     : BUG 1.09 : UTORID :xuejiah2,zhouli32 STATUS : Completed
+NAME     : Othello Timer Fixed Time(restart problemm)
+OWNER    : Jiahe Xue, Linfeng Zhou, 
+PRIORITY : 1
+ESTIMATE : 4 hours    ACTUAL :  3 hours
+ISSUE    : 1. Restart not functioning properly (When the token on the othello board is EMPTY, 
+after using the restart function, the token on the old view will be left on the new one.) 
+		   2. By fixing this, the undo function is now also functioning and the timer can call restart function now. 
+--------------------------------------------------------------------------
