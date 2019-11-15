@@ -25,7 +25,7 @@ public class GameController implements EventHandler<ActionEvent> {
 	}
 
 	public void handle(ActionEvent event) {
-		
+
 		Integer rowIndex = GridPane.getRowIndex((Button) event.getSource());
 		Integer colIndex = GridPane.getColumnIndex((Button) event.getSource());
 		Move move = new Move(rowIndex, colIndex);
@@ -36,7 +36,7 @@ public class GameController implements EventHandler<ActionEvent> {
 			this.oppenent_move();
 		}
 		this.available_move();
-		
+
 	}
 
 	public void change_oppenent(String s) {
@@ -64,7 +64,6 @@ public class GameController implements EventHandler<ActionEvent> {
 				}
 			}
 		}
-		System.out.println(moves);
 	}
 
 }
