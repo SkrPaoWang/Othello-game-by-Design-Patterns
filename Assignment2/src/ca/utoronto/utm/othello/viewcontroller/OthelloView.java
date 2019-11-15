@@ -37,6 +37,7 @@ public class OthelloView implements Observer {
 	protected UndoController controller3;
 	private Image black = new Image("file:black.png");
 	private Image white = new Image("file:white.png");
+	private Image move1 = new Image("file:move1.png");
 	public BorderPane pane;
 	private GridPane grid;
 	private Timeline timer1, timer2;
@@ -118,7 +119,6 @@ public class OthelloView implements Observer {
 	}
 
 	private void init_chessboard() {
-
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
 				this.grid.getChildren().remove(this.getNode(i, j, grid));
@@ -146,7 +146,7 @@ public class OthelloView implements Observer {
 		MenuItem alpha = new MenuItem("Alpha Hint");
 		MenuItem restart_game = new MenuItem("Restart Game");
 		MenuItem undo = new MenuItem("Undo");
-		help.getItems().addAll(greedy, random,alpha);
+		help.getItems().addAll(greedy, random, alpha);
 		restart.getItems().addAll(restart_game);
 		regret.getItems().addAll(undo);
 		undo.setOnAction(controller3);
@@ -197,8 +197,41 @@ public class OthelloView implements Observer {
 		}
 	}
 
+	private Button hint_move() {
+		if (controller2.hint_move != null) {
+			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
+			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
+			return b;
+		}
+		return null;
+
+	}
+
+	private ArrayList<Move> update_available_move() {
+		this.controller.available_move();
+		for (Move move : this.controller.moves) {
+			Button x = (Button) this.getNode(move.getRow(), move.getCol(), grid);
+			ImageView image = new ImageView(this.move1);
+			image.setFitHeight(30);
+			image.setFitWidth(30);
+			x.setGraphic(image);
+		}
+		return this.controller.moves;
+	}
+
+	private boolean check_available_move(ArrayList<Move> Moves, Move move2) {
+		for (Move move1 : Moves) {
+			if (move1.getRow() == move2.getRow() && move1.getCol() == move2.getCol()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@Override
 	public void update(Observable o) {
+		Button hint = this.hint_move();
+		ArrayList<Move> moves = this.update_available_move();
 		if (this.controller2.restart == true) {
 			this.init_chessboard();
 			this.update_label(o);
@@ -208,15 +241,11 @@ public class OthelloView implements Observer {
 			this.update_label(o);
 			for (int row = 0; row < Othello.DIMENSION; row++) {
 				for (int col = 0; col < Othello.DIMENSION; col++) {
-					if (controller2.hint_move != null) {
-						Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(),
-								grid);
-						b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
-					}
 					if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						this.grid.add(button_image(othello.getToken(row, col)), col, row);
-					} else {
+					} else if (hint != this.getNode(row, col, grid)
+							&& (!check_available_move(moves, new Move(row, col)))) {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						Button button = button_image(OthelloBoard.EMPTY);
 						button.setOnAction(controller);

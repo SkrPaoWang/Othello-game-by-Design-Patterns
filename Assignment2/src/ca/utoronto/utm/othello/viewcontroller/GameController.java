@@ -1,6 +1,8 @@
 
 package ca.utoronto.utm.othello.viewcontroller;
 
+import java.util.ArrayList;
+
 import ca.utoronto.utm.othello.model.Move;
 
 import ca.utoronto.utm.othello.model.Othello;
@@ -15,12 +17,15 @@ import javafx.scene.layout.GridPane;
 public class GameController implements EventHandler<ActionEvent> {
 	public Othello othello;
 	public PlayerOppenent opponent = null;
+	public ArrayList<Move> moves;
 
 	public GameController(Othello othello) {
 		this.othello = othello;
+		this.moves = new ArrayList<Move>();
 	}
 
 	public void handle(ActionEvent event) {
+		
 		Integer rowIndex = GridPane.getRowIndex((Button) event.getSource());
 		Integer colIndex = GridPane.getColumnIndex((Button) event.getSource());
 		Move move = new Move(rowIndex, colIndex);
@@ -30,6 +35,8 @@ public class GameController implements EventHandler<ActionEvent> {
 			this.othello.move(move.getRow(), move.getCol());
 			this.oppenent_move();
 		}
+		this.available_move();
+		
 	}
 
 	public void change_oppenent(String s) {
@@ -43,8 +50,21 @@ public class GameController implements EventHandler<ActionEvent> {
 
 	public void oppenent_move() {
 		if (othello.getWhosTurn() == this.opponent.getToken()) {
-			this.othello.move(opponent.getMove().getRow(), opponent.getMove().getCol());		
+			this.othello.move(opponent.getMove().getRow(), opponent.getMove().getCol());
 		}
+	}
+
+	public void available_move() {
+		this.moves.clear();
+		for (int row = 0; row < Othello.DIMENSION; row++) {
+			for (int col = 0; col < Othello.DIMENSION; col++) {
+				Othello copy = othello.copy();
+				if (copy.move(row, col)) {
+					this.moves.add(new Move(row, col));
+				}
+			}
+		}
+		System.out.println(moves);
 	}
 
 }

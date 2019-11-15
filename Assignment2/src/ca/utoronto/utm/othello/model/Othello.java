@@ -145,7 +145,6 @@ public class Othello extends Observable{
 		while(!o.isGameOver()) {
 			int row = rand.nextInt(8);
 			int col = rand.nextInt(8);
-
 			if(o.move(row, col)) {
 				System.out.println("makes move ("+row+","+col+")");
 				System.out.println(o.getBoardString()+ o.getWhosTurn()+" moves next");
