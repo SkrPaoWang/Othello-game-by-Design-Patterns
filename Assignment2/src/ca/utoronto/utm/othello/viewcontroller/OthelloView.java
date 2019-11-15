@@ -143,14 +143,16 @@ public class OthelloView implements Observer {
 		menuBar.getMenus().addAll(help, regret, restart);
 		MenuItem greedy = new MenuItem("Greedy Hint");
 		MenuItem random = new MenuItem("Random Hint");
+		MenuItem alpha = new MenuItem("Alpha Hint");
 		MenuItem restart_game = new MenuItem("Restart Game");
 		MenuItem undo = new MenuItem("Undo");
-		help.getItems().addAll(greedy, random);
+		help.getItems().addAll(greedy, random,alpha);
 		restart.getItems().addAll(restart_game);
 		regret.getItems().addAll(undo);
 		undo.setOnAction(controller3);
 		greedy.setOnAction(this.controller2);
 		random.setOnAction(this.controller2);
+		alpha.setOnAction(controller2);
 		restart_game.setOnAction(this.controller2);
 		return menuBar;
 	}
