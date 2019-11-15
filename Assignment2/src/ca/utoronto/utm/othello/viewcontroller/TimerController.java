@@ -1,4 +1,5 @@
 package ca.utoronto.utm.othello.viewcontroller;
+
 import ca.utoronto.utm.othello.model.Othello;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -30,14 +31,19 @@ public class TimerController implements EventHandler<ActionEvent> {
 			this.txt.setText("minutes:seconds");
 		}
 		if (minutes == 0 && seconds == 0) {
-			game.restart_game();
+			this.txt.setText("0:0");
 		}
 
 		if (seconds == 0) {
 			minutes--;
 			seconds = 60;
+		} else {
+			if (seconds == 0) {
+				minutes--;
+				seconds = 60;
+			}
+			seconds--;
 		}
-		seconds--;
 		this.txt.setText(minutes + ":" + seconds);
 	}
 }

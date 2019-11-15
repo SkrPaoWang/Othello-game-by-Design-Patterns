@@ -15,3 +15,47 @@ ISSUE    : 1. Restart not functioning properly (When the token on the othello bo
 after using the restart function, the token on the old view will be left on the new one.) 
 		   2. By fixing this, the undo function is now also functioning and the timer can call restart function now. 
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.091 : UTORID :? STATUS : Completed
+NAME     : Othello Timer (game bugs if timer is not set up first)
+OWNER    : Linfeng ZHou
+PRIORITY : 1
+ESTIMATE : 3 hours    ACTUAL :  1 hour
+ISSUE    : 1. Start game without set the time has problem. 
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.092 : UTORID :? STATUS : Completed
+NAME     : Othello Timer (time keeps running after restart)
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 3 hours    ACTUAL :  1 hour
+ISSUE    : 1. time keeps running after restart
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.09 : UTORID :zhouli32 STATUS : Completed
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL :  1 day
+ISSUE    : When users play, they see a chess like timer for the othello game. 
+For this user story, the time is fixed to 5 minutes/player.
+After a player makes a move the timer switches off for the player and on for the next mover.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.091 : UTORID :zhouli32 STATUS :Completed
+NAME     : Othello Timer User Specified Time
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 1  day   ACTUAL :  3 days
+ISSUE    : When users play, they see a chess like timer for the othello game. 
+For this user story, the user is allowed to specify the time for each user.
+After a player makes a move the timer switches off for the player and on for the next mover.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY 1.14 : zhouli32 : STATUS : In Progress
+OWNER    : Linfeng Zhou
+PRIORITY : 1
+ESTIMATE : 1 day    ACTUAL :  ?
+ISSUE    : When a user is playing, they see the positions that they can
+move highlighted vs the positions they can't move.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
