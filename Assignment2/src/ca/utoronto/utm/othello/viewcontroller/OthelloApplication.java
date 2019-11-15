@@ -34,19 +34,23 @@ public class OthelloApplication extends Application {
 		// CONTROLLER->MODEL hookup
 		
 	
-		GameController controller = new GameController(othello);
+		GameController gamecontroller = new GameController(othello);
 		MenuController menu_control = new MenuController(othello);
 		UndoController controller3 = new UndoController(othello);
 		// VIEW
 		// VIEW->CONTROLLER hookup
 		
-		OthelloView view = new OthelloView(controller,menu_control, controller3);
+
+		OthelloView view = new OthelloView(gamecontroller,menu_control, controller3);
+		
 		// Set Timer
 		TimerController timerController1 = new TimerController (view.timerDisplay1, othello);
 		TimerController timerController2 = new TimerController (view.timerDisplay2, othello);
 		Timeline timer1 = new Timeline(new KeyFrame(Duration.millis(1000), timerController1));
 		Timeline timer2 = new Timeline(new KeyFrame(Duration.millis(1000), timerController2));
 		view.addTimer(timer1, timer2);
+
+		
 		// MODEL->VIEW hookup
 	
 		othello.attach(view);
@@ -56,8 +60,14 @@ public class OthelloApplication extends Application {
 		FirstPage firstPage = new FirstPage();
 		Scene scene1 = new Scene(firstPage.pane);
 		Scene scene2 = new Scene(view.pane,500,500);
-		FirstPageController fpController = new FirstPageController(stage, scene2, timer1);
+
+
+		// Set timer
+		
+		FirstPageController fpController = new FirstPageController(othello,stage, scene2, timer1,gamecontroller,view);
 		firstPage.x1.setOnAction(fpController);
+		firstPage.x2.setOnAction(fpController);
+		firstPage.x3.setOnAction(fpController);
 		stage.setTitle("Othello");
 		stage.setScene(scene1);
 		

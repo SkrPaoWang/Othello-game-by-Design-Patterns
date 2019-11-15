@@ -11,7 +11,7 @@ public class OthelloControllerHumanVSGreedy extends OthelloControllerVerbose {
 	public OthelloControllerHumanVSGreedy() {
 		super();
 		this.player1 = new PlayerHuman(this.othello, OthelloBoard.P1);
-		this.player2 = new PlayerGreedy(this.othello, OthelloBoard.P2);
+		this.player2 = new PlayerAlpha(this.othello, OthelloBoard.P2);
 	}
 
 	/**
