@@ -34,14 +34,16 @@ public class TimerController implements EventHandler<ActionEvent> {
 	    	this.txt.setText("minutes:seconds");
 	    }
 		if (minutes == 0 && seconds == 0) {
-			game.restart_game();
+			this.txt.setText("0:0");
+		}
+		else {
+			if (seconds == 0) {
+				minutes--;
+				seconds = 60;
+			}
+			seconds--;
 		}
 		
-		if (seconds == 0) {
-			minutes--;
-			seconds = 60;
-		}
-		seconds--;
 		
 //		System.out.println(this.name + ":   " + minutes + ":" + seconds);
 		this.txt.setText(minutes + ":" + seconds);
