@@ -123,28 +123,28 @@ Nov 9,2019
 
 Nov 10,2019
 	What I did yesterday: Rest
-	What I will do today:
-	Obstacles I face:
+	What I will do today:  Learn all the design pattern and understand the code written by others
+	Obstacles I face: Hard to understand the code written by others
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Learn all the design pattern and understand the code written by others
+	What I will do today: Finish UserStory1.15 Player Alpha in model, but not applied on GUI.
+	Obstacles I face: Try to find the most optimal solution with less code, but still use 2 private method to solve it.
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish UserStory1.15 Player Alpha in model, but not applied on GUI.
+	What I will do today:  Apply UserStory1.15 in GUI.
+	Obstacles I face: No obstacle today.
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Apply UserStory1.15 in GUI.
+	What I will do today: Fixed 1.08 bug. When O moves next, we change mode to Human VS Greedy, The greedy player will auotomatically make one move.
+	Obstacles I face: Really don't know how to fix this at first, I don't know how to make the player Greedy automatically make one move.
 
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed1.08 bug
+	What I will do today: Finish 1.08bug. User Factory pattern and Strategy pattern to write it.
+	Obstacles I face: Spent like the entire afternoon but good to fix it.
 
 Nov 15,2019
 	What I did yesterday:
