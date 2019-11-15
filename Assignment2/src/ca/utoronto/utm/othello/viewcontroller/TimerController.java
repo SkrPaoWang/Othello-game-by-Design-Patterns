@@ -31,7 +31,7 @@ public class TimerController implements EventHandler<ActionEvent> {
 	    	this.txt.setText("minutes:seconds");
 	    }
 		if (minutes == 0 && seconds == 0) {
-			this.txt.setText("0:0");
+			this.txt.setText("minutes:seconds");
 		}
 		else {
 			if (seconds == 0) {
@@ -39,7 +39,10 @@ public class TimerController implements EventHandler<ActionEvent> {
 				seconds = 60;
 			}
 			seconds--;
+			this.txt.setText(minutes + ":" + seconds);
 		}
-		this.txt.setText(minutes + ":" + seconds);
+		
+
+		
 	}
 }
