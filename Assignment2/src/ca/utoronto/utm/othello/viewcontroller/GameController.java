@@ -43,7 +43,10 @@ public class GameController implements EventHandler<ActionEvent> {
 
 	public void oppenent_move() {
 		if (othello.getWhosTurn() == this.opponent.getToken()) {
+			System.out.println("I move");
 			this.othello.move(opponent.getMove().getRow(), opponent.getMove().getCol());
+		}else {
+			System.out.println("I not move");
 		}
 	}
 

@@ -63,13 +63,12 @@ public class OthelloView implements Observer {
 
 	private void init_choicebox() {
 		this.choicebox = new ChoiceBox<>();
-		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Random", "Human VS Alpha",
-				"Change Game Mode");
+		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Alpha", "Change Game Mode");
 		this.choicebox.setValue("Change Game Mode");
 		this.choicebox.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
 			if (newValue == "Human VS Human") {
 				this.P1.setText("P1: Human");
-				this.P1.setText("P2: Human");
+				this.P2.setText("P2: Human");
 				this.controller.change_oppenent("Human");
 			} else if (newValue == "Human VS Greedy") {
 				this.P2.setText("P2: Greedy");
@@ -79,10 +78,6 @@ public class OthelloView implements Observer {
 				this.P2.setText("P2: Alpha");
 				this.P1.setText("P1: Human");
 				this.controller.change_oppenent("Alpha");
-			} else {
-				this.P2.setText("P2: Random");
-				this.P1.setText("P1: Human");
-				this.controller.change_oppenent("Random");
 			}
 			if (this.controller.othello.getWhosTurn() == 'O') {
 				this.controller.oppenent_move();

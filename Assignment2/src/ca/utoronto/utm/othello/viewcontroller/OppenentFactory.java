@@ -15,7 +15,6 @@ public class OppenentFactory {
 		case "Greedy":
 			return new PlayerGreedy(othello, c);
 		case "Random":
-			System.out.println(1);
 			return new PlayerRandom(othello, c);
 		case "Human":
 			return new PlayerHuman(othello, c);

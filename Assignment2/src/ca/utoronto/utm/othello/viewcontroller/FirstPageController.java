@@ -33,9 +33,9 @@ public class FirstPageController implements EventHandler<ActionEvent> {
 		if (source.getText() == "VS Greedy:") {
 			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Greedy", othello,'O'));
 			this.view.P2.setText("P2: Greedy");
-		}else if (source.getText() == "VS Random") {
-			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Random", othello,'O'));
-			this.view.P2.setText("P2: Random");
+		}else if (source.getText() == "VS Alpha") {
+			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Alpha", othello,'O'));
+			this.view.P2.setText("P2: Alpha");
 		}else if (source.getText() == "VS Human") {
 			this.gamecontroller.opponent = new PlayerOppenent(OppenentFactory.createPlayer("Human", othello,'O'));
 		}
