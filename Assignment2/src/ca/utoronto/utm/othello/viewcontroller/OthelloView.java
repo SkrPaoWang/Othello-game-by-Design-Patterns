@@ -39,7 +39,6 @@ public class OthelloView implements Observer {
 	private Image white = new Image("file:white.png");
 	public BorderPane pane;
 	private GridPane grid;
-	//
 	protected Label timerDisplay;
 
 	public OthelloView(GameController controller, MenuController controller2, UndoController controller3) {
@@ -62,13 +61,16 @@ public class OthelloView implements Observer {
 				this.P1.setText("P2: Human");
 				this.controller.change_oppenent("Human");
 			} else if (newValue == "Human VS Greedy") {
-				this.P2.setText("P2: Greedy");this.P1.setText("P1: Human");
+				this.P2.setText("P2: Greedy");
+				this.P1.setText("P1: Human");
 				this.controller.change_oppenent("Greedy");
 			} else if (newValue == "Human VS Alpha") {
-                this.P2.setText("P2: Alpha");this.P1.setText("P1: Human");
-                this.controller.change_oppenent("Alpha");
+				this.P2.setText("P2: Alpha");
+				this.P1.setText("P1: Human");
+				this.controller.change_oppenent("Alpha");
 			} else {
-				this.P2.setText("P2: Random");this.P1.setText("P1: Human");
+				this.P2.setText("P2: Random");
+				this.P1.setText("P1: Human");
 				this.controller.change_oppenent("Random");
 			}
 			if (this.controller.othello.getWhosTurn() == 'O') {
@@ -178,11 +180,6 @@ public class OthelloView implements Observer {
 
 	@Override
 	public void update(Observable o) {
-
-		if (controller2.hint_move != null) {
-			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
-			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
-		}
 		if (this.controller2.restart == true) {
 			this.init_chessboard();
 			this.update_label(o);
@@ -192,6 +189,11 @@ public class OthelloView implements Observer {
 			this.update_label(o);
 			for (int row = 0; row < Othello.DIMENSION; row++) {
 				for (int col = 0; col < Othello.DIMENSION; col++) {
+					if (controller2.hint_move != null) {
+						Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(),
+								grid);
+						b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
+					}
 					if (othello.getToken(row, col) != OthelloBoard.EMPTY) {
 						this.grid.getChildren().remove(this.getNode(row, col, grid));
 						this.grid.add(button_image(othello.getToken(row, col)), col, row);
@@ -201,6 +203,7 @@ public class OthelloView implements Observer {
 						button.setOnAction(controller);
 						this.grid.add(button, col, row);
 					}
+
 				}
 			}
 		}
