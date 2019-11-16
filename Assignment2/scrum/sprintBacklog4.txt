@@ -72,3 +72,20 @@ maximizes the players presence in the middle 4 by 4 square of the board,
 otherwise choose the location maximizing the movers presence on the board. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.012 : UTORID :liuya106 STATUS : Complete
+NAME     : button size 
+OWNER    : Liu Yang
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 min
+ISSUE    : When user resize the scene, button remains same size and left no 
+space between buttons
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG 1.06 : UTORID :liuya106 STATUS : Complete
+NAME     : board layout
+OWNER    : Liu Yang
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 30 min
+ISSUE    : reconstruct the image size so that it looks decent
+-------------------------------------------------------------------------

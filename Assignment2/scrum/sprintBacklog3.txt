@@ -69,7 +69,7 @@ ISSUE    : When a user is playing, they see a button etc. which allows them
 to restart the game. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.12 : UTORID :liuya106 STATUS : NotStarted : Complete
+TYPE     : USER STORY 1.12 : UTORID :liuya106 STATUS : Complete
 NAME     : Undo
 OWNER    : Yang Liu
 PRIORITY : 1
@@ -77,11 +77,11 @@ ESTIMATE : 2 hours    ACTUAL :  4 hours
 ISSUE    : A user has the ability to undo the last move or moves.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.13 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+TYPE     : USER STORY 1.13 : UTORID :liuya106 STATUS :Complete
 NAME     : Animation
-OWNER    : 
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+OWNER    : Yang Liu
+PRIORITY : 1
+ESTIMATE :1 day   ACTUAL :  4 hours
 ISSUE    : When a user makes a move, they see an animation associated
 with their placing a piece. 
 --------------------------------------------------------------------------
