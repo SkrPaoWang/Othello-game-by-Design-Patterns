@@ -20,9 +20,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 import javafx.animation.Animation;
+import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
+import javafx.animation.RotateTransition;
 
 public class OthelloView implements Observer {
 	private Label labelwhoturns;
@@ -84,6 +87,16 @@ public class OthelloView implements Observer {
 				this.controller.oppenent_move();
 			}
 		});
+	}
+
+	protected RotateTransition createRotator(ImageView token) {
+		RotateTransition rotator = new RotateTransition(Duration.millis(200), token);
+		rotator.setAxis(Rotate.Y_AXIS);
+		rotator.setFromAngle(0);
+		rotator.setToAngle(180);
+		rotator.setInterpolator(Interpolator.LINEAR);
+		rotator.setCycleCount(1);
+		return rotator;
 	}
 
 	private void init_game_layout() {
@@ -168,13 +181,14 @@ public class OthelloView implements Observer {
 
 	private Button button_image(char token) {
 		Button button = new Button("");
-		button.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; ");
+//		button.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; ");
 		if (token != OthelloBoard.EMPTY) {
 			ImageView image = (token == OthelloBoard.P1) ? new ImageView(black) : new ImageView(white);
 			image.setFitHeight(30);
 			image.setFitWidth(30);
 			button.setGraphic(image);
 		}
+		button.setMinSize(50, 50);
 		return button;
 	}
 
@@ -197,10 +211,11 @@ public class OthelloView implements Observer {
 		}
 	}
 
-	private Button hint_move() {
+	private Button hint_move(Observable o) {
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
 			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
+
 			return b;
 		}
 		return null;
@@ -226,15 +241,37 @@ public class OthelloView implements Observer {
 		}
 		return false;
 	}
+	
+	private void AnimationFlip (Othello othello) {
+		
+		for (Move x : othello.animation) {
+			if (othello.getToken(x.getRow(), x.getCol()) != OthelloBoard.EMPTY) {
+				ImageView view = (othello.getToken(x.getRow(), x.getCol()) == 'X') ? new ImageView(black)
+						: new ImageView(white);
+				view.setFitHeight(30);
+				view.setFitWidth(30);
+				RotateTransition rotator = createRotator(view);
+				rotator.play();
+				Button animationButton = new Button();
+				animationButton.setGraphic(view);
+				animationButton.setMinSize(50, 50);
+				this.grid.getChildren().remove(this.getNode(x.getRow(), x.getCol(), grid));
+				grid.add(animationButton, x.getCol(), x.getRow());
+			}
+		}
+	}
 
 	@Override
 	public void update(Observable o) {
-		Button hint = this.hint_move();
+		Button hint = this.hint_move(o);
 		ArrayList<Move> moves = this.update_available_move();
 		if (this.controller2.restart == true) {
 			this.init_chessboard();
 			this.update_label(o);
 			this.controller2.restart = false;
+		} else if (this.controller2.hint_move != null) {
+			((Othello) o).animation.clear();
+			this.controller2.hint_move = null;
 		} else {
 			Othello othello = (Othello) o;
 			this.update_label(o);
@@ -253,6 +290,8 @@ public class OthelloView implements Observer {
 
 				}
 			}
+			this.AnimationFlip(othello);
+			
 		}
 	}
 }

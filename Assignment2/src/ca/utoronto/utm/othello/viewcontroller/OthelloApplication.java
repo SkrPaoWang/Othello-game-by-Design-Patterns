@@ -59,7 +59,7 @@ public class OthelloApplication extends Application {
 		// SCENE
 		FirstPage firstPage = new FirstPage();
 		Scene scene1 = new Scene(firstPage.pane);
-		Scene scene2 = new Scene(view.pane,500,500);
+		Scene scene2 = new Scene(view.pane,800,500);
 
 
 		// Set timer
