@@ -37,7 +37,7 @@ public class OthelloView implements Observer {
 	protected UndoController controller3;
 	private Image black = new Image("file:black.png");
 	private Image white = new Image("file:white.png");
-	private Image move1 = new Image("file:move1.png");
+	private Image move1 = new Image("file:move 2.png");
 	public BorderPane pane;
 	private GridPane grid;
 	private Timeline timer1, timer2;
@@ -204,7 +204,6 @@ public class OthelloView implements Observer {
 			return b;
 		}
 		return null;
-
 	}
 
 	private ArrayList<Move> update_available_move() {

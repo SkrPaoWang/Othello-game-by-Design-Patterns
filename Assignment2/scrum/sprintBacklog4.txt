@@ -51,11 +51,24 @@ For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.14 : zhouli32 : STATUS : In Progress
-OWNER    : Linfeng Zhou
+TYPE     : USER STORY 1.14 :Xuwencai: STATUS : Completed
+OWNER    : XuWencai
 PRIORITY : 1
-ESTIMATE : 1 day    ACTUAL :  ?
+ESTIMATE : 2 hour   ACTUAL :  4 hour
 ISSUE    : When a user is playing, they see the positions that they can
 move highlighted vs the positions they can't move.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+TYPE     : USER STORY 1.15 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+NAME     : Better strategy
+OWNER    : XuWencai
+PRIORITY :  1
+ESTIMATE : 4 hour   ACTUAL :  4 hour
+ISSUE    : A user can play the following, improved strategy:
+Choose a corner if available,
+otherwise choose a side if available, otherwise choose a space that
+maximizes the players presence in the middle 4 by 4 square of the board,
+otherwise choose the location maximizing the movers presence on the board. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
