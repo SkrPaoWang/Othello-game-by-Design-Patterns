@@ -101,3 +101,34 @@ Also when Human VS Human, O moves next, and we switch to Human Vs Greedy. The Gr
 make a move. I make this one come true.
 -------------------------------------------------------------------------
 
+TYPE     : Bug 1.09: UTORID :xuejiah2 STATUS : Complete
+NAME     : Preparing image for two players, black and white.
+OWNER    : xuejiahe
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1 hour
+ISSUE    : The token on the board was horrible, I draw two tokens with AI and resized them. 
+-------------------------------------------------------------------------
+TYPE     : Bug 1.10: UTORID :xuejiah2 STATUS : Complete
+NAME     : Animation
+OWNER    : xuejiahe
+PRIORITY : 2
+ESTIMATE : 2 hour    ACTUAL : 2 hour
+ISSUE    : The Animation used to perform for all the tokens on the board, after fixing the bug that it didn't clear
+all the history move in Animation, the bug is fixed. ( The arraylist in Othello is cleared everytime)
+-------------------------------------------------------------------------
+TYPE     : Bug 1.11: UTORID :xuejiah2 STATUS : Complete
+NAME     : HighLight problem in hint
+OWNER    : xuejiahe
+PRIORITY : 1
+ESTIMATE : 2 hour   ACTUAL : 3 hour
+ISSUE    : After using the hint button, the gird that suppose to be on highlight has no reaction. This is caused by
+the update method in the OthelloView. The if and else logic is incorrect. 
+-------------------------------------------------------------------------
+TYPE     : Bug 1.12: UTORID :xuejiah2 STATUS : Complete
+NAME     : Undo problem when it comes the the beginning
+OWNER    : LinFengZhou, xuejiahe , XuWenCai
+PRIORITY : 2
+ESTIMATE : 2 hour   ACTUAL : 3 hour
+ISSUE    : The undo problem is having some trouble when it comes to the first token put on the board, this is caused by
+the unavoidable for loop at the end of the update method.
+-------------------------------------------------------------------------
