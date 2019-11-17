@@ -61,17 +61,6 @@ move highlighted vs the positions they can't move.
 --------------------------------------------------------------------------
 
 
-TYPE     :  Bug 1.15 : UTORID : xuwencai STATUS : Completed
-NAME     : Better strategy
-OWNER    : XuWencai
-PRIORITY :  1
-ESTIMATE : 4 hour   ACTUAL :  4 hour
-ISSUE    : The user can VS player alpha (Improved strategy)in console but not
-in GUI.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-
 TYPE     : USER STORY 1.15 : UTORID : xuwencai STATUS : Completed
 NAME     : Better strategy
 OWNER    : XuWencai

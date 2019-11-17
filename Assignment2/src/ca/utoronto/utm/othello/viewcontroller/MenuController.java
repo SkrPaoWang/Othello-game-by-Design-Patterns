@@ -23,6 +23,9 @@ public class MenuController implements EventHandler<ActionEvent> {
 		this.restart = false;
 	}
 
+	/**
+	 * Handle the user's event when they click the menu.
+	 */
 	public void handle(ActionEvent event) {
 
 		MenuItem item = (MenuItem) event.getSource();

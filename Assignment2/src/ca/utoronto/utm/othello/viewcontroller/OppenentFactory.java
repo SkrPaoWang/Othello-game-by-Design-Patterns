@@ -1,7 +1,7 @@
 package ca.utoronto.utm.othello.viewcontroller;
 
 import ca.utoronto.utm.othello.model.Othello;
-import ca.utoronto.utm.othello.model.OthelloBoard;
+
 import ca.utoronto.utm.othello.model.Player;
 import ca.utoronto.utm.othello.model.PlayerAlpha;
 import ca.utoronto.utm.othello.model.PlayerGreedy;
@@ -9,7 +9,13 @@ import ca.utoronto.utm.othello.model.PlayerHuman;
 import ca.utoronto.utm.othello.model.PlayerRandom;
 
 public class OppenentFactory {
-
+	/**
+	 * @param product
+	 * @param othello Othello
+	 * @param c       first player or second player
+	 * @return the opponent for the user. It is whether greedy or random or human or
+	 *         alpha (the improved Strategy)
+	 */
 	public static Player createPlayer(String product, Othello othello, char c) {
 		switch (product) {
 		case "Greedy":

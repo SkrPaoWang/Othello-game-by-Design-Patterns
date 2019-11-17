@@ -24,7 +24,6 @@ import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
-import javafx.animation.KeyFrame;
 import javafx.animation.RotateTransition;
 
 public class OthelloView implements Observer {
@@ -33,12 +32,12 @@ public class OthelloView implements Observer {
 	Label labelcountO;
 	private Label game_status;
 	private Label P1;
-	Label P2;
-	ChoiceBox<String> choicebox;
+	protected Label P2;
+	private ChoiceBox<String> choicebox;
 	private GameController controller;
 	private MenuController controller2;
 	protected UndoController controller3;
-	private Image black = new Image("file:black.png");
+	private Image black = new Image("file:black1.png");
 	private Image white = new Image("file:white.png");
 	private Image move1 = new Image("file:move 2.png");
 	public BorderPane pane;
@@ -58,6 +57,12 @@ public class OthelloView implements Observer {
 
 	}
 
+	/**
+	 * add the timer in the view
+	 * 
+	 * @param t1 timeline
+	 * @param t2 timeline
+	 */
 	public void addTimer(Timeline t1, Timeline t2) {
 		timer1 = t1;
 		timer2 = t2;
@@ -65,6 +70,9 @@ public class OthelloView implements Observer {
 		timer2.setCycleCount(Animation.INDEFINITE);
 	}
 
+	/**
+	 * initialize the choicebox in the view and set the controller
+	 */
 	private void init_choicebox() {
 		this.choicebox = new ChoiceBox<>();
 		this.choicebox.getItems().addAll("Human VS Human", "Human VS Greedy", "Human VS Alpha", "Change Game Mode");
@@ -99,6 +107,9 @@ public class OthelloView implements Observer {
 		return rotator;
 	}
 
+	/**
+	 * initialize the game layout and initialize the chessboard in the game
+	 */
 	private void init_game_layout() {
 		this.pane = new BorderPane();
 		this.pane.setTop(this.set_menu());
@@ -131,6 +142,9 @@ public class OthelloView implements Observer {
 		this.pane.setCenter(this.grid);
 	}
 
+	/**
+	 * initialize the chessboard in the game
+	 */
 	private void init_chessboard() {
 		for (byte i = 0; i < 8; i++) {
 			for (byte j = 0; j < 8; j++) {
@@ -181,7 +195,6 @@ public class OthelloView implements Observer {
 
 	private Button button_image(char token) {
 		Button button = new Button("");
-//		button.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; ");
 		if (token != OthelloBoard.EMPTY) {
 			ImageView image = (token == OthelloBoard.P1) ? new ImageView(black) : new ImageView(white);
 			image.setFitHeight(30);
@@ -192,6 +205,11 @@ public class OthelloView implements Observer {
 		return button;
 	}
 
+	/**
+	 * update the observer label in the game accoring to observable
+	 * 
+	 * @param o Observable
+	 */
 	private void update_label(Observable o) {
 		Othello othello = (Othello) o;
 		if (this.labelwhoturns.getText().charAt(0) != othello.getWhosTurn()) {
@@ -211,7 +229,13 @@ public class OthelloView implements Observer {
 		}
 	}
 
-	private Button hint_move(Observable o) {
+	/**
+	 * Highlight the button when user wants hint
+	 * 
+	 * @param o Observable
+	 * @return the Button for the user's hint
+	 */
+	private Button update_hint_move(Observable o) {
 		if (controller2.hint_move != null) {
 			Button b = (Button) this.getNode(controller2.hint_move.getRow(), controller2.hint_move.getCol(), grid);
 			b.setStyle("-fx-min-width: 35px; " + "-fx-min-height: 35px; " + "-fx-background-color: PINK");
@@ -221,6 +245,12 @@ public class OthelloView implements Observer {
 		return null;
 	}
 
+	/**
+	 * When a user is playing, they see the positions that they can move highlighted
+	 * vs the positions they can't move.
+	 * 
+	 * @return the list which contains all the available move for user.
+	 */
 	private ArrayList<Move> update_available_move() {
 		this.controller.available_move();
 		for (Move move : this.controller.moves) {
@@ -233,6 +263,11 @@ public class OthelloView implements Observer {
 		return this.controller.moves;
 	}
 
+	/**
+	 * @param Moves
+	 * @param move2
+	 * @return whether moves2 is a available move for user.
+	 */
 	private boolean check_available_move(ArrayList<Move> Moves, Move move2) {
 		for (Move move1 : Moves) {
 			if (move1.getRow() == move2.getRow() && move1.getCol() == move2.getCol()) {
@@ -241,9 +276,14 @@ public class OthelloView implements Observer {
 		}
 		return false;
 	}
-	
-	private void AnimationFlip (Othello othello) {
-		
+
+	/**
+	 * make the flip animation in the game
+	 * 
+	 * @param othello
+	 */
+	private void AnimationFlip(Othello othello) {
+
 		for (Move x : othello.animation) {
 			if (othello.getToken(x.getRow(), x.getCol()) != OthelloBoard.EMPTY) {
 				ImageView view = (othello.getToken(x.getRow(), x.getCol()) == 'X') ? new ImageView(black)
@@ -261,9 +301,12 @@ public class OthelloView implements Observer {
 		}
 	}
 
+	/**
+	 * Update the chessboard from the othello model
+	 */
 	@Override
 	public void update(Observable o) {
-		Button hint = this.hint_move(o);
+		Button hint = this.update_hint_move(o);
 		ArrayList<Move> moves = this.update_available_move();
 		if (this.controller2.restart == true) {
 			this.init_chessboard();
@@ -291,7 +334,7 @@ public class OthelloView implements Observer {
 				}
 			}
 			this.AnimationFlip(othello);
-			
+
 		}
 	}
 }

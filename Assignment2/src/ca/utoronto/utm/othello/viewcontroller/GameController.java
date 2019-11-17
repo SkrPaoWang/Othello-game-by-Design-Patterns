@@ -24,6 +24,9 @@ public class GameController implements EventHandler<ActionEvent> {
 		this.moves = new ArrayList<Move>();
 	}
 
+	/**
+	 * Handle the user's event when they click the chessboard.
+	 */
 	public void handle(ActionEvent event) {
 
 		Integer rowIndex = GridPane.getRowIndex((Button) event.getSource());
@@ -39,7 +42,13 @@ public class GameController implements EventHandler<ActionEvent> {
 
 	}
 
-	public void change_oppenent(String s) {
+	/**
+	 * Change the opponent to Human or Greedy or Alpha when User clicks the
+	 * choicebox.
+	 * 
+	 * @param s
+	 */
+	protected void change_oppenent(String s) {
 		if (othello.getWhosTurn() == 'O') {
 			this.opponent.setOpponent(OppenentFactory.createPlayer(s, othello, othello.getWhosTurn()));
 		} else {
@@ -48,13 +57,19 @@ public class GameController implements EventHandler<ActionEvent> {
 		}
 	}
 
-	public void oppenent_move() {
+	/**
+	 * make player's opponent move if it is allowed.
+	 */
+	protected void oppenent_move() {
 		if (othello.getWhosTurn() == this.opponent.getToken()) {
 			this.othello.move(opponent.getMove().getRow(), opponent.getMove().getCol());
 		}
 	}
 
-	public void available_move() {
+	/**
+	 * Add the players's available move into an arraylist.
+	 */
+	protected void available_move() {
 		this.moves.clear();
 		for (int row = 0; row < Othello.DIMENSION; row++) {
 			for (int col = 0; col < Othello.DIMENSION; col++) {
