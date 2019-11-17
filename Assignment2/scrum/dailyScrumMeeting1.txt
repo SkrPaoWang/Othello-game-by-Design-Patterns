@@ -157,7 +157,7 @@ Nov 16,2019
 	Obstacles I face: No.
 
 Nov 17,2019
-	What I did yesterday:   Write the JavaDoc for a2.
+	What I did yesterday:   Write the JavaDoc and aritcheture.
 	What I will do today: Finished.
 	Obstacles I face: No.
 
