@@ -14,7 +14,7 @@ package ca.utoronto.utm.othello.model;
  */
 
 
-public class OthelloBoard {
+public class OthelloBoard extends Visitable {
 	public static final char EMPTY = ' ', P1 = 'X', P2 = 'O', BOTH = 'B';
 	private int dim = 8;
 	private char[][] board;
@@ -386,6 +386,18 @@ public class OthelloBoard {
 			System.out.println("hasMove("+row+","+(row-1)+",0,1)="+result);
 		}
 		
+	}
+
+	@Override
+	public char accept(WinnerVisitor visitor) {
+		// TODO Auto-generated method stub
+		return visitor.visit(this);
+	}
+
+	@Override
+	public boolean accept(MoveVisitor visitor, int row, int col, char turn) {
+		// TODO Auto-generated method stub
+		return visitor.visit(this, row, col, turn);
 	}
 }
 

@@ -1,5 +1,4 @@
 package ca.utoronto.utm.othello.model;
-
 import ca.utoronto.utm.othello.viewcontroller.OthelloView;
 import ca.utoronto.utm.util.*;
 
@@ -21,12 +20,13 @@ import java.util.Random;
  *
  */
 public class Othello extends Observable {
-	public static final int DIMENSION = 8; // This is an 8x8 game
-	public ArrayList<Move> animation = new ArrayList();
-	private OthelloBoard board = new OthelloBoard(Othello.DIMENSION);
+	public static final int DIMENSION=8; // This is an 8x8 game
+
+	private OthelloBoard board=new OthelloBoard(Othello.DIMENSION);
 	private char whosTurn = OthelloBoard.P1;
 	private int numMoves = 0;
 	public ArrayList<Move> moves = new ArrayList();
+	public ArrayList<Move> animation = new ArrayList();
 
 	/**
 	 * return P1,P2 or EMPTY depending on who moves next.
@@ -36,10 +36,10 @@ public class Othello extends Observable {
 	public char getWhosTurn() {
 		return this.whosTurn;
 	}
-
+	
 	/**
 	 * 
-	 * @param row
+	 * @param row 
 	 * @param col
 	 * @return the token at position row, col.
 	 */
@@ -56,11 +56,10 @@ public class Othello extends Observable {
 	 * @param col
 	 * @return whether the move was successfully made.
 	 */
-
 	public boolean move(int row, int col) {
 		Othello beforeboard = this.copy();
 		animation.clear();
-		if (this.board.move(row, col, this.whosTurn)) {
+		if(board.accept(new MoveVisitor(), row, col, this.whosTurn)) {
 			for (int i = 0; i < Othello.DIMENSION; i++) {
 				for (int j = 0; j < Othello.DIMENSION; j++) {
 					if (beforeboard.getToken(i, j) != this.getToken(i, j)) {
@@ -71,8 +70,7 @@ public class Othello extends Observable {
 			}
 			this.whosTurn = OthelloBoard.otherPlayer(this.whosTurn);
 			char allowedMove = board.hasMove();
-			if (allowedMove != OthelloBoard.BOTH)
-				this.whosTurn = allowedMove;
+			if(allowedMove!=OthelloBoard.BOTH)this.whosTurn=allowedMove;
 			this.numMoves++;
 			this.notifyObservers();
 			moves.add(new Move(row, col));
@@ -81,6 +79,7 @@ public class Othello extends Observable {
 			return false;
 		}
 	}
+
 
 	/**
 	 * 
@@ -91,27 +90,26 @@ public class Othello extends Observable {
 		return board.getCount(player);
 	}
 
+
 	/**
 	 * Returns the winner of the game.
 	 * 
 	 * @return P1, P2 or EMPTY for no winner, or the game is not finished.
 	 */
 	public char getWinner() {
-		if (!this.isGameOver())
-			return OthelloBoard.EMPTY;
-		if (this.getCount(OthelloBoard.P1) > this.getCount(OthelloBoard.P2))
-			return OthelloBoard.P1;
-		if (this.getCount(OthelloBoard.P1) < this.getCount(OthelloBoard.P2))
-			return OthelloBoard.P2;
-		return OthelloBoard.EMPTY;
+		if(!this.isGameOver())return OthelloBoard.EMPTY;
+		
+		return board.accept(new WinnerVisitor());
+		
 	}
+
 
 	/**
 	 * 
 	 * @return whether the game is over (no player can move next)
 	 */
 	public boolean isGameOver() {
-		return this.whosTurn == OthelloBoard.EMPTY;
+		return this.whosTurn==OthelloBoard.EMPTY;
 	}
 
 	/**
@@ -119,15 +117,19 @@ public class Othello extends Observable {
 	 * @return a copy of this. The copy can be manipulated without impacting this.
 	 */
 	public Othello copy() {
-		Othello o = new Othello();
-		o.board = this.board.copy();
+		Othello o= new Othello();
+		o.board=this.board.copy();
 		o.numMoves = this.numMoves;
 		o.whosTurn = this.whosTurn;
 		return o;
 	}
-
+	
 	public void restart_game() {
-		this.board = new OthelloBoard(8);
+		/**
+		 * 
+		 * game restart
+		 */
+		this.board= new OthelloBoard(8);
 		this.numMoves = 0;
 		this.whosTurn = 'X';
 		this.notifyObservers();
@@ -138,8 +140,9 @@ public class Othello extends Observable {
 	 * @return a string representation of the board.
 	 */
 	public String getBoardString() {
-		return board.toString() + "\n";
+		return board.toString()+"\n";
 	}
+
 
 	/**
 	 * run this to test the current class. We play a completely random game. DO NOT
@@ -147,19 +150,25 @@ public class Othello extends Observable {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String [] args) {
 		Random rand = new Random();
+
 
 		Othello o = new Othello();
 		System.out.println(o.getBoardString());
-		while (!o.isGameOver()) {
+		while(!o.isGameOver()) {
 			int row = rand.nextInt(8);
 			int col = rand.nextInt(8);
-			if (o.move(row, col)) {
-				System.out.println("makes move (" + row + "," + col + ")");
-				System.out.println(o.getBoardString() + o.getWhosTurn() + " moves next");
-			}
-		}
 
+			if(o.move(row, col)) {
+				System.out.println("makes move ("+row+","+col+")");
+				System.out.println(o.getBoardString()+ o.getWhosTurn()+" moves next");
+			}
+			
+		}
+	
 	}
+
 }
+
+
