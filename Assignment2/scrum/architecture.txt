@@ -6,6 +6,17 @@
 # USED 
 Observer/Observable : Created by arnold, to be used by the View to observe the Model.
 
+Strategy design pattern: In player opponent class. -  The user has theAbility to switch out 
+different opponents (Player Greedy Player Alpha Player Human) when he plays the game.
+
+Factory design pattern: dynamic user control of which instance of
+        a subclass is created at runtime.
+       (Player Greedy, Player Alpha (the improved strategy), or player Human).
+
+Visitor design pattern.
+
+
+ 
 
 
 # UNUSED
