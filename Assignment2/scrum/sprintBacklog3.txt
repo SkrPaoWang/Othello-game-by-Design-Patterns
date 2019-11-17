@@ -49,7 +49,7 @@ on the board at all times.
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.08 : UTORID :xuejiah2 STATUS : Completed
 NAME     : Opponent Chooser Implementation
-OWNER    : Xue Jiahe, Linfeng Zhou
+OWNER    : Xue Jiahe
 PRIORITY : (1,2,3)
 ESTIMATE : 2 days  ACTUAL : 3 days 
 ISSUE    : An extension to Opponent Chooser, we implement the users choice
@@ -58,6 +58,12 @@ the user should be able to switch opponents at any time during game play.
 THe current game continues with the new opponent.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : USER STORY 1.081 : UTORID :zhouli32 STATUS : Completed
+NAME     : Opponent Chooser Implementation
+OWNER    : Linfeng Zhou
+PRIORITY : 2
+ESTIMATE : 1 days  ACTUAL : 1 day 
+ISSUE    : First Page option and first page controller is not working
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY 1.11 : UTORID : xuwencai : STATUS : Completed

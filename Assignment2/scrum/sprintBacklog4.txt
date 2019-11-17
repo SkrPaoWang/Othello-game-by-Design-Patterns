@@ -132,3 +132,11 @@ ESTIMATE : 2 hour   ACTUAL : 3 hour
 ISSUE    : The undo problem is having some trouble when it comes to the first token put on the board, this is caused by
 the unavoidable for loop at the end of the update method.
 -------------------------------------------------------------------------
+TYPE     : Bug 1.121: UTORID :zhouli32 STATUS : Complete
+NAME     : Undo problem when it comes the the beginning
+OWNER    : LinFengZhou
+PRIORITY : 2
+ESTIMATE : 2 hour   ACTUAL : 3 hour
+ISSUE    : The undo problem is having some trouble when it comes to the first token put on the board, this is caused by
+the unavoidable for loop at the end of the update method.
+-------------------------------------------------------------------------
