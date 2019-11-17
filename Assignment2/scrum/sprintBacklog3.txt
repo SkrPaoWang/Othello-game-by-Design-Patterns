@@ -60,11 +60,11 @@ THe current game continues with the new opponent.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.11 : UTORID : xuwencai : NotStarted Completed
+TYPE     : USER STORY 1.11 : UTORID : xuwencai : STATUS : Completed
 NAME     : Restart
 OWNER    : XuWencai
-PRIORITY : (1,2,3)
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :  
+PRIORITY : 1
+ESTIMATE : 2 hour   ACTUAL :  2 hour
 ISSUE    : When a user is playing, they see a button etc. which allows them
 to restart the game. 
 --------------------------------------------------------------------------
@@ -84,4 +84,16 @@ PRIORITY : 1
 ESTIMATE :1 day   ACTUAL :  4 hours
 ISSUE    : When a user makes a move, they see an animation associated
 with their placing a piece. 
+--------------------------------------------------------------------------
+
+TYPE     : USER STORY 1.18 : UTORID : xuwencai : STATUS : Completed
+NAME     : Init Gui
+OWNER    : XuWencai
+PRIORITY : 3
+ESTIMATE : 3 hour   ACTUAL :  3 hour
+ISSUE    : Create the first page class which is the Iron man and three gems..
+Each gem represents one game mode. This allows the user
+to choose Human VS Human game mode, or Human VS Greedy game mode,
+or Human VS Alpha game mode(The improved strategy in UserStory1.15).
+--------------------------------------------------------------------------
 --------------------------------------------------------------------------

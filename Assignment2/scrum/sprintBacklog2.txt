@@ -9,7 +9,7 @@
 TYPE     : USER STORY 1.01 : UTORID :xuwencai STATUS : Complete
 OWNER    : XuWencai
 PRIORITY : 1
-ESTIMATE : 1 hour   ACTUAL :  1 hour
+ESTIMATE : 1 hour   ACTUAL :  2 hour
 ISSUE    : User can now click on an 8x8 grid of buttons used by the 
 OthelloApplication. At this stage, a click results in a print out of 
 the (row,col) that the user clicked.
@@ -71,7 +71,7 @@ TYPE     : USER STORY 1.04 : UTORID :xuwencai STATUS : Complete
 NAME     : Token Counter
 OWNER    : XuWencai
 PRIORITY : 1
-ESTIMATE : 1 hour ACTUAL :  1 hour
+ESTIMATE : 1 hour ACTUAL :  2 hour
 ISSUE    : When user play, the count for each player is on display. 
 This count shows the 
 current number of P1 tokens and P2 tokens on the board.

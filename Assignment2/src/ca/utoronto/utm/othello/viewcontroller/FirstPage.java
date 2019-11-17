@@ -36,6 +36,7 @@ public class FirstPage {
 		x1.setLayoutX(400);x1.setLayoutY(150);
 		x2.setLayoutX(400);x2.setLayoutY(240);
 		x3.setLayoutX(400);x3.setLayoutY(330);
+
 	}
 
 }

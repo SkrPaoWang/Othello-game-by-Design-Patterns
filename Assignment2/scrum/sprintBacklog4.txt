@@ -51,7 +51,7 @@ For this user story, the user is allowed to specify the time for each user.
 After a player makes a move the timer switches off for the player and on for the next mover.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY 1.14 :Xuwencai: STATUS : Completed
+TYPE     : USER STORY 1.14 :xuwencai: STATUS : Completed
 OWNER    : XuWencai
 PRIORITY : 1
 ESTIMATE : 2 hour   ACTUAL :  4 hour
@@ -60,7 +60,19 @@ move highlighted vs the positions they can't move.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 
-TYPE     : USER STORY 1.15 : UTORID : STATUS : NotStarted (NotStarted,InProgress, Incomplete,Complete)
+
+TYPE     :  Bug 1.15 : UTORID : xuwencai STATUS : Completed
+NAME     : Better strategy
+OWNER    : XuWencai
+PRIORITY :  1
+ESTIMATE : 4 hour   ACTUAL :  4 hour
+ISSUE    : The user can VS player alpha (Improved strategy)in console but not
+in GUI.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+TYPE     : USER STORY 1.15 : UTORID : xuwencai STATUS : Completed
 NAME     : Better strategy
 OWNER    : XuWencai
 PRIORITY :  1
@@ -89,3 +101,14 @@ PRIORITY : 3
 ESTIMATE : 1 hour    ACTUAL : 30 min
 ISSUE    : reconstruct the image size so that it looks decent
 -------------------------------------------------------------------------
+
+TYPE     : 1.08 bug: UTORID :xuwencai STATUS : Complete
+NAME     : Fix potential bug in UserStory1.08 and use design pattern to rewrite it.
+OWNER    : XuWencai
+PRIORITY : 2
+ESTIMATE : 4 hour    ACTUAL : one afternoon
+ISSUE    : In branch UserStory1.08 bug, rewrite 1.08 with strategy design pattern and factory design pattern.
+Also when Human VS Human, O moves next, and we switch to Human Vs Greedy. The Greedy will automatically
+make a move. I make this one come true.
+-------------------------------------------------------------------------
+

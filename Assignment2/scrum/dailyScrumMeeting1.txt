@@ -2,24 +2,24 @@
 Member name: XuWencai     email:   wencai.xu@mail.utoronto.ca  utorid:   xuwencai
 
 Oct 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not started
+	What I will do today: Not started
+	Obstacles I face:  Not started
 
 Oct 18,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Not started
+	What I will do today:  Not started
+	Obstacles I face:  Not started
 
 Oct 19,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Not started
+	What I will do today:   Not started
+	Obstacles I face:   Not started
 
 Oct 20,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Not started
+	What I will do today:  Not started
+	Obstacles I face:  Not started
 
 Oct 21,2019
 	What I did yesterday: 
@@ -147,19 +147,19 @@ Nov 14,2019
 	Obstacles I face: Spent like the entire afternoon but good to fix it.
 
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:  Finish 1.08bug. User Factory pattern and Strategy pattern to write it.
+	What I will do today:  Finish UserStory 1.14.
+	Obstacles I face: Issue with git branch.
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish UserStory 1.14.
+	What I will do today:  Write the JavaDoc for a2.
+	Obstacles I face: No.
 
 Nov 17,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:   Write the JavaDoc for a2.
+	What I will do today: Finished.
+	Obstacles I face: No.
 
 Nov 18,2019
 	What I did yesterday:
