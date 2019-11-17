@@ -128,34 +128,36 @@ Nov 10,2019
 	Obstacles I face: BUG1.09
 
 Nov 11,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:UserStory 1.09
+	What I will do today:Review CSC236
 	Obstacles I face:
 
 Nov 12,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:CSC236
+	What I will do today: Finish up 1.09
+	Obstacles I face:BUG 1.091 and BUG 1.092
 
 Nov 13,2019
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday:Finish up 1.09
+	What I will do today:CSC236 Review
 	Obstacles I face:
-
+	
 Nov 14,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
+	What I did yesterday:CSC236 Review
+	What I will do today:BUG 1.17
+	Obstacles I face: Understanding the concept of Visitor pattern
+	Choose which to be Visitable or Visitor.
+	
 Nov 15,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:BUG 1.17
+	What I will do today:Merge teammate's UserStory 1.13 to master
+	Obstacles I face: BUG1.131 and some other git merge issue.
 
 Nov 16,2019
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Merge teammate's UserStory 1.13 to master
+	What I will do today:Finish Bug1.17
+	Obstacles I face:In fact for our assignment its is weird to use visitor, in my
+	opinion, the pattern should be use for bigger projects. ONlY minor changes applied. 
 
 Nov 17,2019
 	What I did yesterday:
