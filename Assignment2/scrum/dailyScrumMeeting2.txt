@@ -139,11 +139,12 @@ Nov 12,2019
 
 Nov 13,2019
 	What I did yesterday:Finish up 1.09
-	What I will do today:CSC236 Review
-	Obstacles I face:
+	What I will do today:CSC236 Review and A.I Hint
+	Obstacles I face: The hint highlight 
+	will not disappear after the move
 	
 Nov 14,2019
-	What I did yesterday:CSC236 Review
+	What I did yesterday:CSC236 Review and A.I hint
 	What I will do today:BUG 1.17
 	Obstacles I face: Understanding the concept of Visitor pattern
 	Choose which to be Visitable or Visitor.

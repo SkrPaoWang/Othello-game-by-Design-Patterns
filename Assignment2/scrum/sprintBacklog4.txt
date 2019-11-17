@@ -16,7 +16,7 @@ after using the restart function, the token on the old view will be left on the 
 		   2. By fixing this, the undo function is now also functioning and the timer can call restart function now. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.091 : UTORID :? STATUS : Completed
+TYPE     : BUG 1.091 : UTORID :zhouli32 STATUS : Completed
 NAME     : Othello Timer (game bugs if timer is not set up first)
 OWNER    : Linfeng ZHou
 PRIORITY : 1
@@ -24,7 +24,7 @@ ESTIMATE : 3 hours    ACTUAL :  1 hour
 ISSUE    : 1. Start game without set the time has problem. 
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG 1.092 : UTORID :? STATUS : Completed
+TYPE     : BUG 1.092 : UTORID :zhouli32 STATUS : Completed
 NAME     : Othello Timer (time keeps running after restart)
 OWNER    : Linfeng Zhou
 PRIORITY : 1
@@ -140,12 +140,4 @@ ESTIMATE : 2 hour   ACTUAL : 3 hour
 ISSUE    : The undo problem is having some trouble when it comes to the first token put on the board, this is caused by
 the unavoidable for loop at the end of the update method.
 -------------------------------------------------------------------------
--------------------------------------------------------------------------
-TYPE     : Bug 1.131: UTORID :zhouli32 STATUS : In Progress
-NAME     : When VS. AI part of animation will not show
-OWNER    : LinFengZhou
-PRIORITY : 2
-ESTIMATE : 2 hour   ACTUAL : 3 hour
-ISSUE    : Human Animation will not show, because AI makes move 
-immediately.
--------------------------------------------------------------------------
+
