@@ -7,6 +7,12 @@ import ca.utoronto.utm.othello.model.Othello;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+/**
+ * This is a controller for undo a move.
+ * 
+ * @author Linfeng Zhou, Yang Liu, Xuwen Cai, Jiahe Xue
+ *
+ */
 class UndoController implements EventHandler<ActionEvent> {
 	protected Othello o;
 

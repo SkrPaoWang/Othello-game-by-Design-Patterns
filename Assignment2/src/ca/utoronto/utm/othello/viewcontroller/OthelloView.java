@@ -26,6 +26,14 @@ import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 
+/**
+ * This is the view which is a an Observer
+ * 
+ * 
+ * @author Linfeng Zhou, Yang Liu, Xuwen Cai, Jiahe Xue
+ *
+ */
+
 public class OthelloView implements Observer {
 	private Label labelwhoturns;
 	Label labelcountX;
@@ -96,7 +104,11 @@ public class OthelloView implements Observer {
 			}
 		});
 	}
-
+	
+	/**
+	 * Make the image to do an animation
+	 *@param token
+	 */
 	protected RotateTransition createRotator(ImageView token) {
 		RotateTransition rotator = new RotateTransition(Duration.millis(200), token);
 		rotator.setAxis(Rotate.Y_AXIS);
@@ -161,7 +173,11 @@ public class OthelloView implements Observer {
 			}
 		}
 	}
-
+	
+	
+	/**
+	 * Set up the menu bar with corresponding buttons
+	 */
 	private MenuBar set_menu() {
 		MenuBar menuBar = new MenuBar();
 		Menu help = new Menu("Help");
@@ -183,7 +199,12 @@ public class OthelloView implements Observer {
 		restart_game.setOnAction(this.controller2);
 		return menuBar;
 	}
-
+	
+	/**
+	 * Helper Function which returns the node on the GridPane with input row and col
+	 * @param row, column, gridPane
+	 * @return the Node at position on board
+	 */
 	private Node getNode(int row, int column, GridPane gridPane) {
 		for (Node node : gridPane.getChildren()) {
 			if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == column) {
@@ -192,7 +213,11 @@ public class OthelloView implements Observer {
 		}
 		return null;
 	}
-
+	/**
+	 * Helper Function which takes in token and set the button with corresponding image
+	 * @param token
+	 * @return a button with image
+	 */
 	private Button button_image(char token) {
 		Button button = new Button("");
 		if (token != OthelloBoard.EMPTY) {
@@ -264,6 +289,7 @@ public class OthelloView implements Observer {
 	}
 
 	/**
+	 * 
 	 * @param Moves
 	 * @param move2
 	 * @return whether moves2 is a available move for user.
@@ -303,6 +329,7 @@ public class OthelloView implements Observer {
 
 	/**
 	 * Update the chessboard from the othello model
+	 * @param o
 	 */
 	@Override
 	public void update(Observable o) {
