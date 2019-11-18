@@ -387,13 +387,23 @@ public class OthelloBoard extends Visitable {
 		}
 		
 	}
-
+	
+	/**
+	 * 
+	 * @param visitor
+	 * @return the result of visiting
+	 */
 	@Override
 	public char accept(WinnerVisitor visitor) {
 		// TODO Auto-generated method stub
 		return visitor.visit(this);
 	}
 
+	/**
+	 * 
+	 * @param visitor
+	 * @return the result of visiting
+	 */
 	@Override
 	public boolean accept(MoveVisitor visitor, int row, int col, char turn) {
 		// TODO Auto-generated method stub

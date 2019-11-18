@@ -3,7 +3,12 @@ package ca.utoronto.utm.othello.viewcontroller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
-
+/**
+ * Time Controller 
+ * 
+ * @author Linfeng Zhou, Yang Liu, Xuwen Cai, Jiahe Xue
+ *
+ */
 public class TimerController implements EventHandler<ActionEvent> {
 
 	private int seconds;
@@ -17,6 +22,8 @@ public class TimerController implements EventHandler<ActionEvent> {
 
 	/**
 	 * Handle the user's event when they want to specify time
+	 * @param event
+	 * 
 	 */
 	@Override
 	public void handle(ActionEvent event) {

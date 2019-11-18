@@ -8,7 +8,13 @@ import ca.utoronto.utm.othello.model.PlayerGreedy;
 import ca.utoronto.utm.othello.model.PlayerHuman;
 import ca.utoronto.utm.othello.model.PlayerRandom;
 
+/**
+ * Create different opponents depends on controller.
+ * @author Xuwen Cai, LinFeng Zhou, Yang Liu, jiahe Xue
+ *
+ */
 public class OppenentFactory {
+	
 	/**
 	 * @param product
 	 * @param othello Othello

@@ -9,6 +9,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * This is the main GUI application
+ * 
+ * Othello makes use of the OthelloBoard.
+ * 
+ * @author Linfeng Zhou, Yang Liu, Xuwen Cai, Jiahe Xue
+ *
+ */
 public class OthelloApplication extends Application {
 
 	// REMEMBER: To run this in the lab put
