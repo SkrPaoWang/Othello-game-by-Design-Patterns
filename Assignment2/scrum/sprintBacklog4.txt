@@ -91,6 +91,24 @@ ESTIMATE : 1 hour    ACTUAL : 30 min
 ISSUE    : reconstruct the image size so that it looks decent
 -------------------------------------------------------------------------
 
+TYPE     : Strategy design pattern for: UTORID :xuwencai STATUS : Complete
+NAME     : Strategy design pattern for 1.08
+OWNER    : XuWencai
+PRIORITY : 2
+ESTIMATE : 1   hour ACTUAL : 1 hour
+ISSUE    :  rewrite 1.08 with strategy design pattern.
+
+-------------------------------------------------------------------------
+
+TYPE     : Factory design pattern for: UTORID :xuwencai STATUS : Complete
+NAME     : Factory design pattern for 1.08
+OWNER    : XuWencai
+PRIORITY : 2
+ESTIMATE : 1   hour ACTUAL : 1 hour
+ISSUE    :  rewrite 1.08 with factory design pattern.
+
+-------------------------------------------------------------------------
+
 TYPE     : 1.08 bug: UTORID :xuwencai STATUS : Complete
 NAME     : Fix potential bug in UserStory1.08 and use design pattern to rewrite it.
 OWNER    : XuWencai
