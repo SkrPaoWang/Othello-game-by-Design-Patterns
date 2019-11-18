@@ -12,6 +12,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.MenuItem;
 
+/**
+ * Controller used for menu bar
+ * @author Xuwen Cai, LinFeng Zhou, Yang Liu, jiahe Xue
+ *
+ */
 public class MenuController implements EventHandler<ActionEvent> {
 	private Othello othello;
 	public Move hint_move;

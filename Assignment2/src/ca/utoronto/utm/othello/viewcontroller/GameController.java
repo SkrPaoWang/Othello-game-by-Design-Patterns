@@ -13,7 +13,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-
+/**
+ * 
+ * @author Xuwen Cai, LinFeng Zhou, Yang Liu, jiahe Xue
+ *
+ */
 public class GameController implements EventHandler<ActionEvent> {
 	public Othello othello;
 	public PlayerOppenent opponent = null;
