@@ -5,7 +5,12 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-
+/**
+ * First page appears an iron man image with three 
+ * opponent choices available.
+ * @author Xuwen Cai, LinFeng Zhou, Yang Liu, jiahe Xue
+ *
+ */
 public class FirstPage {
 	public Pane pane; Button x1; Button x2; Button x3;
 	public FirstPage() {

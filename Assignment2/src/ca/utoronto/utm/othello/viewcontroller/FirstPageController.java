@@ -10,6 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * Controller used by first page opponent choice.
+ * @author Xuwen Cai, LinFeng Zhou, Yang Liu, jiahe Xue
+ *
+ */
 public class FirstPageController implements EventHandler<ActionEvent> {
 	private Stage stage;
 	private Timeline timer;
@@ -51,19 +56,33 @@ public class FirstPageController implements EventHandler<ActionEvent> {
 		timer.play();
 
 	}
-
+	/**
+	 * @return return stage
+	 */
 	public Stage getStage() {
 		return stage;
 	}
 
+	/**
+	 * set a different stage
+	 * @param stage
+	 */
 	public void setStage(Stage stage) {
 		this.stage = stage;
 	}
 
+	/**
+	 * get first page
+	 * @return return FirstPage
+	 */
 	public FirstPage getFirstPage() {
 		return firstPage;
 	}
 
+	/**
+	 * set a new first page
+	 * @param firstPage
+	 */
 	public void setFirstPage(FirstPage firstPage) {
 		this.firstPage = firstPage;
 	}
